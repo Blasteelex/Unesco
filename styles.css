@@ -584,7 +584,7 @@ footer {
 .carte-europe {
     flex: 1;
     background-color: #f39c12; 
-    border-radius: 30px 30px 0 0;
+    border-radius: 30px 30px 30px 30px;
     padding: 30px 20px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -614,7 +614,7 @@ footer {
 }
 
 .carte-europe p {
-    margin-top: 15px; 
+    margin-top: 1vh; 
     font-family: 'Textes-cicle', sans-serif;
     font-size: 1.1rem;
     line-height: 1.4;

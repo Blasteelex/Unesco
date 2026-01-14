@@ -1,0 +1,1007 @@
+/* ==========================================================================
+   1. COMMUN & CONFIGURATION
+   (Variables, Polices, Accessibilité, Base, Header, Footer, Modales)
+   ========================================================================== */
+
+/* --- IMPORTATIONS & POLICES --- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap');
+
+@font-face {
+    font-family: 'Titres-dyno';
+    src: url(polices/Dyno_Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Textes-cicle';
+    src: url(polices/Cicle_Semi.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --- VARIABLES GLOBALES (:ROOT) --- */
+:root {
+    --col-primaire: #b94503;
+    --col-secondaire: #ea5c0d;
+    --col-secondaire-survol: #ff6d00;
+    --col-tertiaire: #f7af3e;
+    --col-sombre: #333333;
+    --col-titre-fond: rgba(80, 80, 80, 0.9);
+    --col-texte: white;
+    --col-texte-nav: white;
+    --fond-superposition: transparent;
+}
+
+/* --- LOGIQUE D'ACCESSIBILITÉ (DALTONIEN & DYSLEXIQUE) --- */
+/* Mode Daltonien */
+body:has(#check-daltonien:checked) {
+    --col-primaire: #000000;
+    --col-secondaire: #0044cc;
+    --col-secondaire-survol: #0066ff;
+    --col-tertiaire: #ffff00;
+    --col-sombre: #000000;
+    --col-titre-fond: #000000;
+    --col-texte: #ffff00;
+    --col-texte-nav: #ffff00;
+    --fond-superposition: #1a1a1a;
+    background-image: none;
+    background-color: var(--fond-superposition);
+}
+
+#check-daltonien { display: none; }
+
+body:has(#check-daltonien:checked) .bulle-titre {
+    color: black;
+    background-color: var(--col-tertiaire);
+    text-shadow: none;
+}
+
+body:has(#check-daltonien:checked) .panneau-tiroir {
+    background-color: #000000;
+    border-top: 4px solid #ffff00;
+    color: #ffff00;
+}
+
+body:has(#check-daltonien:checked) .boite-intro,
+body:has(#check-daltonien:checked) .texte-bas {
+    background-color: #1a1a1a;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+}
+
+body:has(#check-daltonien:checked) .colonne-peuple h4,
+body:has(#check-daltonien:checked) .carte-europe h4 {
+    background-color: #0044cc;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+}
+
+body:has(#check-daltonien:checked) .carte-europe {
+    background-color: #1a1a1a;
+    border: 2px solid #ffff00;
+}
+
+body:has(#check-daltonien:checked) img {
+    border-color: #ffff00 !important;
+}
+
+body:has(#check-daltonien:checked) .btn-fermer-tiroir {
+    background-color: #ffff00;
+    color: #000000;
+}
+/* Mode Dyslexique */
+body:has(#check-dyslexique:checked) {
+    font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+body:has(#check-dyslexique:checked) .police-dyno, 
+body:has(#check-dyslexique:checked) .police-cicle,
+body:has(#check-dyslexique:checked) h1,
+body:has(#check-dyslexique:checked) h2,
+body:has(#check-dyslexique:checked) h3, 
+body:has(#check-dyslexique:checked) h4,
+body:has(#check-dyslexique:checked) p,
+body:has(#check-dyslexique:checked) a,
+body:has(#check-dyslexique:checked) .bulle-titre,
+body:has(#check-dyslexique:checked) .bulle-contenu,
+body:has(#check-dyslexique:checked) .boite-intro, 
+body:has(#check-dyslexique:checked) .btn-item-modal,
+body:has(#check-dyslexique:checked) .texte-bas {
+    font-family: 'OpenDyslexic', sans-serif !important;
+    letter-spacing: 1px;
+}
+
+/* --- BASE & LAYOUT GÉNÉRAL --- */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-image: url("https://cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/A7FLRK6XEBFTZKLAPXEGCD4WWU.jpg");
+    background-color: var(--fond-superposition);
+    background-blend-mode: normal; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    position: relative; 
+}
+
+/* Utilitaires polices */
+.police-dyno { font-family: 'Titres-dyno', sans-serif; }
+.police-cicle { font-family: 'Textes-cicle', sans-serif; }
+
+/* --- HEADER (EN-TÊTE) --- */
+header {
+    background-color: var(--col-primaire);
+    width: 100%;
+    height: 90px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+}
+
+.conteneur-logo {
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+    display: flex;
+    gap: 45px; 
+    align-items: center;
+}
+
+.conteneur-logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+.nav-entete {
+    display: flex;
+    gap: 55px;
+    align-items: flex-end;
+}
+.nav-entete a { text-decoration: none; }
+
+.nav-entete h2 {
+    background-color: var(--col-secondaire);
+    color: var(--col-texte-nav);
+    margin: 0;
+    padding: 5px 55px;
+    padding-bottom: 5px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-family: 'Titres-dyno', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+
+.nav-entete h2:hover,
+.nav-entete h2.actif {
+    padding-bottom: 15px;
+    background-color: var(--col-secondaire);
+}
+
+.conteneur-boutons {
+    position: absolute;
+    right: 55px;
+    bottom: 0px;
+    display: flex;
+    gap: 35px; 
+    align-items: flex-end;
+}
+
+.conteneur-boutons img {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+.bouton {
+    background-color: var(--col-secondaire);
+    margin: 0;
+    padding: 15px 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bouton:hover {
+    padding-bottom: 20px;
+    background-color: var(--col-secondaire);
+}
+
+/* --- FOOTER (PIED DE PAGE) --- */
+footer {
+    background-color: var(--col-sombre);
+    color: var(--col-texte);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    position: relative;
+    z-index: 100;
+    font-size: large;
+}
+
+/* --- MODALES (POP-UPS HEADER) --- */
+.bascule-modal { display: none; }
+
+.calque-modal {
+    display: none;
+    position: absolute;
+    top: 90px;
+    right: 25px;
+    width: auto;
+    height: auto;
+    z-index: 90;
+}
+
+#check-equipe:checked ~ header #fenetre-equipe,
+#check-access:checked ~ header #fenetre-access,
+#check-langue:checked ~ header #fenetre-langue {
+    display: block;
+}
+
+.boite-modal {
+    background: var(--col-primaire);
+    padding: 30px 40px;
+    border-radius: 0 0 35px 35px;
+    color: var(--col-texte);
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-top: none;
+}
+
+.boite-modal h3 {
+    margin: 0;
+    font-family: 'Titres-dyno', sans-serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.contenu-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+.contenu-modal a { text-decoration: none; }
+
+.btn-item-modal {
+    background-color: var(--col-secondaire);
+    color: var(--col-texte-nav);
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Titres-dyno', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+}
+
+.btn-item-modal:hover {
+    transform: scale(1.03);
+    background-color: var(--col-secondaire-survol);
+}
+
+.btn-fermer {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--col-texte);
+    transition: transform 0.2s;
+    background: none;
+    border: none;
+}
+.btn-fermer:hover { transform: scale(1.2); }
+
+
+/* ==========================================================================
+   2. ACCUEIL (STRUCTURE SPÉCIFIQUE)
+   ========================================================================== */
+
+.titre-principal {
+    background-color: var(--col-titre-fond);
+    color: var(--col-texte);
+    padding: 75px 120px;
+    border-radius: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    max-width: 600px;
+    position: absolute;
+    top: 23%;
+    z-index: 10;
+}
+
+.titre-principal h2 {
+    font-size: 45px;
+    margin: 0;
+}
+
+.titre-principal p {
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+/* Menu en escalier */
+.menu-escalier {
+    display: flex;
+    gap: 150px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+    margin-top: 235px;
+}
+
+.menu-escalier a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s;
+    font-size: larger;
+}
+
+.carte {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.carte:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+.niveau-haut { margin-top: 250px; }
+.niveau-moyen { margin-top: 375px; }
+.niveau-bas { margin-top: 500px; }
+
+/* Bulles des cartes */
+.bulle-titre {
+    background-color: var(--col-tertiaire);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    padding: 7.5px;
+    text-align: center;
+    font-weight: bold;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    font-family: 'Titres-dyno', sans-serif;
+}
+
+.bulle-contenu {
+    background-color: var(--col-sombre);
+    color: var(--col-texte);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    flex-grow: 1;
+    max-height: 80px;
+    font-family: 'Textes-cicle', sans-serif;
+}
+
+
+/* ==========================================================================
+   3. HISTOIRE (TIROIRS & CONTENU INTERNE)
+   ========================================================================== */
+
+/* Fond sombre de fermeture */
+#ecran-fond {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 400;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+#ecran-fond.actif { 
+    display: block; 
+    opacity: 1;
+}
+
+/* Bouton croix de fermeture des tiroirs */
+.btn-fermer-tiroir {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    z-index: 600;
+    line-height: 1;
+    font-weight: bold;
+    transition: transform 0.2s;
+    background: rgba(0,0,0,0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+}
+.btn-fermer-tiroir:hover {
+    transform: scale(1.1);
+    background: rgba(0,0,0,0.4);
+}
+
+/* Structure générale des tiroirs */
+.panneau-tiroir {
+    position: fixed;
+    background-color: #ea5c0d;
+    z-index: 500;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), visibility 0s linear 0.5s;
+}
+
+.panneau-tiroir.actif {
+    transform: translate(0, 0) !important;
+    visibility: visible;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), visibility 0s linear 0s;
+}
+
+.titre-tiroir {
+    font-family: 'Titres-dyno', sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0 0 15px 0;
+    width: 100%;
+    text-transform: none;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.boite-intro {
+    background-color: #fcae1e; 
+    border-radius: 20px;
+    padding: 15px 20px;
+    text-align: center;
+    font-family: 'Textes-cicle', sans-serif;
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+    color: white;
+    line-height: 1.3;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- TIROIR GAUCHE (PEUPLES) --- */
+.tiroir-gauche {
+    top: 90px; left: 0;
+    width: 98vw;
+    height: calc(100vh - 90px);
+    transform: translateX(-100%);
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.grille-peuples {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    height: 100%;
+    align-items: start;
+    width: 100%;
+}
+
+.colonne-peuple {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.colonne-peuple img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-sizing: border-box;
+    display: block;
+}
+.colonne-peuple h4 {
+    background-color: #d35400;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    margin: 0;
+    font-family: 'Textes-cicle', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+.colonne-peuple p {
+    text-align: center;
+    font-family: 'Textes-cicle', sans-serif;
+    font-size: 1rem;
+    line-height: 1.3;
+    padding: 10px 5px;
+    margin: 0;
+}
+
+/* --- TIROIR BAS (EUROPÉENS) --- */
+.tiroir-bas {
+    bottom: 0; left: 0;
+    width: 100vw;
+    height: 85vh; 
+    transform: translateY(100%);
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.conteneur-europe {
+    display: flex;
+    gap: 25px;
+    height: 100%;
+    align-items: flex-end; 
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.carte-europe {
+    flex: 1;
+    background-color: #f39c12; 
+    border-radius: 30px 30px 0 0;
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 90%;
+    position: relative; 
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+}
+
+.carte-europe h4 {
+    background-color: #ea5c0d;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    position: absolute;
+    top: -25px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-family: 'Textes-cicle', sans-serif;
+    font-size: 1.1rem;
+    white-space: nowrap; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 0;
+    z-index: 10;
+    border: 2px solid #f39c12;
+}
+
+.carte-europe p {
+    margin-top: 15px; 
+    font-family: 'Textes-cicle', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.carte-europe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: auto;
+}
+
+/* --- TIROIR DROITE (PROTÉGÉ) --- */
+.tiroir-droite {
+    top: 90px; right: 0;
+    width: 50vw;
+    min-width: 450px;
+    height: calc(100vh - 90px);
+    transform: translateX(100%);
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.grille-protection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.grille-protection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: transform 0.2s;
+    border-radius: 5px;
+}
+.grille-protection img:hover { transform: scale(1.05); }
+
+.texte-bas {
+    font-family: 'Textes-cicle', sans-serif;
+    text-align: justify;
+    margin-top: auto;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   4. RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- TABLETTE ET PC MOYEN (max-width: 1100px) --- */
+@media screen and (max-width: 1100px) {
+    .menu-escalier {
+        gap: 50px;
+    }
+
+    .titre-principal {
+        padding: 50px 80px;
+        top: 20%;
+    }
+    
+    .grille-peuples {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- MOBILE (max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    /* En-tête simplifié */
+    header {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+    .conteneur-logo {
+        position: static;
+        margin: 10px 0;
+        justify-content: center;
+    }
+
+    .nav-entete {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-entete h2 {
+        padding: 8px 15px;
+        font-size: 1rem;
+        border-radius: 15px;
+    }
+
+    .conteneur-boutons {
+        position: static;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    /* Ajustement de l'accueil */
+    .titre-principal {
+        position: relative;
+        top: auto;
+        margin: 30px 15px;
+        padding: 30px 20px;
+        width: auto;
+        border-radius: 40px;
+    }
+    .titre-principal h2 { font-size: 2rem; }
+    .titre-principal p { font-size: 1.2rem; }
+
+    .menu-escalier {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .niveau-haut, .niveau-moyen, .niveau-bas { margin-top: 0; }
+    .carte { width: 90vw; max-width: 300px; }
+
+    /* Fixation des Tiroirs pour Mobile */
+    #tiroir-gauche, 
+    #tiroir-droite, 
+    #tiroir-bas {
+        position: fixed;
+        width: 100% !important; 
+        min-width: 0 !important;
+        max-width: 100% !important;
+        height: 85vh !important;
+        
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        top: auto !important;
+        
+        transform: translate(0, 100%) !important;
+        
+        border-radius: 30px 30px 0 0;
+        padding: 20px;
+        padding-top: 60px; /* Place pour la croix */
+        box-sizing: border-box;
+        overflow-y: auto;
+        border: none;
+        z-index: 999;
+    }
+
+    #tiroir-gauche.actif, 
+    #tiroir-droite.actif, 
+    #tiroir-bas.actif {
+        transform: translate(0, 0) !important;
+    }
+
+    /* Contenu interne adapté */
+    .grille-peuples { 
+        grid-template-columns: 1fr; 
+        gap: 25px;
+    }
+    .colonne-peuple img { height: 200px; }
+
+    /* Fix spécifique Européens */
+    .conteneur-europe {
+        flex-direction: column;
+        height: auto;
+        padding-top: 450px;
+        padding-bottom: 40px;
+        align-items: stretch;
+        gap: 30px;
+        display: flex;
+    }
+    
+    .carte-europe { 
+        width: 100%; 
+        height: auto !important; 
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 0;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .carte-europe h4 {
+        position: static !important;
+        transform: none !important;
+        margin: 0 auto 15px auto !important;
+        display: inline-block;
+        width: auto;
+        max-width: 90%;
+    }
+
+    .carte-europe p {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+
+    .carte-europe img {
+        height: 200px;
+        margin-top: 20px;
+    }
+    
+    .grille-protection { grid-template-columns: 1fr; }
+    
+    .calque-modal {
+        top: 50%; left: 50%; right: auto;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        position: fixed;
+    }
+    .boite-modal { border-radius: 35px; }
+}
+
+/*==========================================================================
+   5. SPÉCIFIQUE PAGE NATURE (VERSION 1 COLONNE - IMAGES 95%)
+  ========================================================================== */
+
+
+.largeur-50 {
+    width: 50vw;
+    min-width: 450px;
+}
+
+
+.grille-nature-split {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.colonne-nature {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+
+.img-nature-container, .img-geo-simple {
+    width: 55% !important;  
+    margin: 0 auto;  
+    height: 300px !important; 
+    object-fit: cover;
+    border: 4px solid white;
+    box-sizing: border-box;
+    display: block;
+}
+
+
+.img-nature-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.txt-nature-desc {
+    background: transparent;
+    color: white;
+    font-family: 'Textes-cicle', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.4;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.conteneur-bulle-centre {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.bulle-info-centre {
+    background-color: #fcae1e;
+    color: white;
+    padding: 25px 40px;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'Textes-cicle', sans-serif;
+    font-size: 1.1rem;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    line-height: 1.4;
+}
+
+/* --- TITRES ET MENU SPÉCIFIQUES NATURE --- */
+.titre-principal-nature {
+    background-color: var(--col-titre-fond);
+    color: var(--col-texte);
+    padding: 75px 120px;
+    border-radius: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    max-width: 600px;
+    position: absolute;
+    top: 12.5%;
+    z-index: 10;
+}
+
+.titre-principal-nature h2 {
+    font-size: 45px;
+    margin: 0;
+}
+
+.titre-principal-nature p {
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+.menu-escalier-nature {
+    display: flex;
+    gap: 150px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+    margin-top: 100px;
+}
+
+.menu-escalier-nature a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s;
+    font-size: larger;
+}
+
+@media screen and (max-width: 768px) {
+    .grille-nature-split {
+        gap: 30px;
+    }
+    
+    .img-nature-container, .img-geo-simple {
+        height: 200px !important; 
+        width: 100% !important;  
+    }
+    
+    .bulle-info-centre {
+        width: 90%;
+        border-radius: 30px;
+        padding: 20px;
+        font-size: 1rem;
+    }
+    
+    .largeur-50 {
+        width: 100vw !important;
+        min-width: 0 !important;
+    }
+
+    .titre-principal-nature {
+        position: relative;
+        top: auto;
+        margin: 30px 15px;
+        padding: 30px 20px;
+        width: auto;
+        border-radius: 40px;
+    }
+    .titre-principal-nature h2 { font-size: 2rem; }
+    .titre-principal-nature p { font-size: 1.2rem; }
+    
+    .menu-escalier-nature {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}

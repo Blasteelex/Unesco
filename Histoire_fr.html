@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Projet Unesco - Histoire</title>
+</head>
+<body>
+
+    <div id="ecran-fond" onclick="fermerTousTiroirs()"></div>
+
+    <input type="checkbox" id="check-daltonien" class="bascule-mode" style="display:none;">
+    <input type="checkbox" id="check-dyslexique" class="bascule-mode" style="display:none;">
+    <input type="radio" name="fenetres" id="check-equipe" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-access" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-langue" class="bascule-modal">
+    <input type="radio" name="fenetres" id="fermer-tout" class="bascule-modal">
+
+    <header>
+        <div class="conteneur-logo">
+            <a href="Accueil_fr.html"><img src="images/logo_MCN_original.png" alt="logo_MCN_original"></a>
+            <a href="https://www.unesco.org/fr"><img src="images/logo-unesco.png" alt="logo-unesco"></a>
+        </div>
+        
+        <nav class="nav-entete">
+            <a href="Frise_fr.html"><h2>Frise</h2></a>
+            <a href="Nature_fr.html"><h2>Nature</h2></a>
+            <a href="index.html"><h2>Accueil</h2></a>
+            <a href="Histoire_fr.html"><h2 class="actif">Histoire</h2></a>
+            <a href="Carte_fr.html"><h2>Carte et réservations</h2></a>
+        </nav>
+        
+        <div class="conteneur-boutons">
+            <label for="check-equipe" class="bouton"><img src="images/about-us-svgrepo-com.svg" alt="Equipe"></label>
+            <label for="check-access" class="bouton"><img src="images/disability-svgrepo-com.svg" alt="Acces"></label>
+            <label for="check-langue" class="bouton"><img src="images/translate-01-svgrepo-com.svg" alt="Langue"></label>
+        </div>
+
+        <div class="calque-modal" id="fenetre-access">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Accessibilité</h3>
+                <div class="contenu-modal">
+                    <label for="check-daltonien" class="btn-item-modal">Mode daltonien</label>
+                    <label for="check-dyslexique" class="btn-item-modal">Mode dyslexique</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-equipe">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Qui sommes-nous ?</h3>
+                <div class="contenu-modal">
+                    <a href="https://blasteelex.github.io/Portfolio/" class="btn-item-modal">ANTONIJEVIC MIODRAG</a>
+                    <a href="#" class="btn-item-modal">MEUNIER MATHIEU</a>
+                    <a href="#" class="btn-item-modal">TRICOIRE LOHAN</a>
+                    <a href="#" class="btn-item-modal">FOURREAU--HARRELLE VALENTIN</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-langue">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Langues</h3>
+                <div class="contenu-modal">
+                    <a href="Histoire_fr.html"><div class="btn-item-modal">Français</div></a>
+                    <a href="Histoire_en.html"><div class="btn-item-modal">Anglais</div></a>                    
+                    <a href="Histoire_sr.html"><div class="btn-item-modal">Serbe</div></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="titre-principal">
+            <h2 class="police-dyno">L'histoire</h2>
+            <p class="police-cicle">Un site occupé depuis des millénaires, marqué par les peuples autochtones et les explorations modernes.</p>
+        </div>
+
+        <div class="menu-escalier">
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-gauche')">
+                <div class="carte">
+                    <div class="bulle-titre">Les peuples autochtones</div>
+                    <div class="bulle-contenu">L'histoire des peuples du Grand Canyon.</div>
+                </div>
+            </div>
+            <div class="niveau-bas" onclick="ouvrirTiroir('tiroir-bas')">
+                <div class="carte">
+                    <div class="bulle-titre">L'arrivée des européens</div>
+                    <div class="bulle-contenu">Les premiers étrangers au Grand Canyon</div>
+                </div>
+            </div>
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-droite')">
+                <div class="carte">
+                    <div class="bulle-titre">Un site protégé</div>
+                    <div class="bulle-contenu">Sous la protection de l'UNESCO. Une aubaine pour les peuples et animaux.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Les peuples autochtones</h2>
+            
+            <div class="boite-intro">
+                Le Grand Canyon est habité depuis plus de 10 000 ans. Plusieurs peuples autochtones y ont développé leurs cultures, leurs traditions spirituelles et leurs modes de vie adaptés à cet environnement unique.
+            </div>
+
+            <div class="grille-peuples">
+                <div class="colonne-peuple">
+                    <img src="images/puebloans.jpg" alt="Puebloans">
+                    <h4>Les Ancestral Puebloans</h4>
+                    <p>Villages, agriculture, poteries, habitations dans les falaises.</p>
+                </div>
+                <div class="colonne-peuple">
+                    <img src="images/hopis.jpg" alt="Hopis">
+                    <h4>Les Hopis</h4>
+                    <p>L'un des peuples les plus anciens, traditions et mythes liés au canyon.</p>
+                </div>
+                <div class="colonne-peuple">
+                    <img src="images/havasupai.jpg" alt="Havasupai">
+                    <h4>Les Havasupai</h4>
+                    <p>Installés dans les vallées, réputés pour leurs cultures et leurs jardins.</p>
+                </div>
+                <div class="colonne-peuple">
+                    <img src="images/navajo.jpg" alt="Navajo">
+                    <h4>Les Navajo</h4>
+                    <p>Arrivés plus tard, territoire spirituel important.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-bas" class="panneau-tiroir tiroir-bas">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">L'arrivée des Européens</h2>
+            
+            <div class="conteneur-europe">
+                <div class="carte-europe">
+                    <h4>1540 : l'expédition Cárdenas</h4>
+                    <p>Envoyé par l'Espagne, Garcia López de Cárdenas atteint la rive sud du canyon. Son groupe découvre l'immensité du site, mais ne parvient pas à y descendre. C'est le premier Européen connu à l'avoir observé.</p>
+                    <img src="images/cardenas.jpg" alt="Cardenas">
+                </div>
+                <div class="carte-europe">
+                    <h4>XIXe siècle : explorations et relevés</h4>
+                    <p>Au XIXe siècle, soldats, explorateurs et scientifiques traversent la région. Ils réalisent les premiers relevés du canyon, malgré les dangers et le manque de chemins. Le site commence à être cartographié avec précision.</p>
+                    <img src="images/xixe.jpg" alt="XIXe">
+                </div>
+                <div class="carte-europe">
+                    <h4>1869 : expédition de John Wesley Powell</h4>
+                    <p>En 1869, John Wesley Powell mène une descente du fleuve Colorado avec neuf hommes. Ils parcourent des rapides inconnus et collectent des données essentielles. Cette expédition devient la première exploration scientifique du canyon.</p>
+                    <img src="images/powell.jpg" alt="Powell">
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Un site protégé</h2>
+
+            <div class="boite-intro">
+                Reconnu pour son importance culturelle et naturelle, le Grand Canyon devient National Monument en 1908 puis National Park en 1919. Aujourd'hui, il est classé au patrimoine mondial de l'UNESCO.
+            </div>
+            
+            <div class="grille-protection">
+                <img src="images/prot1.jpg" alt="Img">
+                <img src="images/prot2.jpg" alt="Img">
+                <img src="images/prot3.jpg" alt="Img">
+                <img src="images/prot4.jpg" alt="Img">
+                <img src="images/prot5.jpg" alt="Img">
+                <img src="images/prot6.jpg" alt="Img">
+            </div>
+            
+            <p class="texte-bas">
+                Le Grand Canyon, reconnu pour sa valeur universelle exceptionnelle, représente un patrimoine naturel et culturel majeur. Son histoire, ses paysages et les traditions des peuples autochtones en font un site irremplaçable. L'UNESCO œuvre à préserver ce lieu unique pour les générations futures.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="police-cicle">
+        <p>"Sculpté par le Colorado, le Grand Canyon, de près de 1 500 m de profondeur, est la gorge la plus spectaculaire du monde. Situé dans l’Arizona, il traverse le parc national du Grand Canyon." <br> --UNESCO-- </p>
+    </footer>
+
+    <script>
+        const modes = ['check-daltonien', 'check-dyslexique'];
+        modes.forEach(id => {
+            const checkbox = document.getElementById(id);
+            if (localStorage.getItem(id) === 'true') {
+                checkbox.checked = true;
+            }   
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(id, this.checked);
+            });
+        });
+
+        const ecranFond = document.getElementById('ecran-fond');
+
+        function ouvrirTiroir(id) {
+            fermerTousTiroirs();
+            document.getElementById(id).classList.add('actif');
+            ecranFond.classList.add('actif');
+        }
+
+        function fermerTousTiroirs() {
+            const tousTiroirs = document.querySelectorAll('.panneau-tiroir');
+            tousTiroirs.forEach(d => d.classList.remove('actif'));
+            ecranFond.classList.remove('actif');
+        }
+    </script>
+
+</body>
+</html>

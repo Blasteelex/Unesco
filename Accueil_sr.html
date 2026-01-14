@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Пројекат Унеско</title>
+</head>
+<body>
+
+    <input type="checkbox" id="check-daltonien" class="bascule-mode" style="display:none;">
+    <input type="checkbox" id="check-dyslexique" class="bascule-mode" style="display:none;">
+
+    <input type="radio" name="fenetres" id="check-equipe" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-access" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-langue" class="bascule-modal">
+    <input type="radio" name="fenetres" id="fermer-tout" class="bascule-modal">
+
+    <header>
+        <div class="conteneur-logo">
+            <a href="Accueil_sr.html"><img src="images/logo_MCN_original.png" alt="logo_MCN_original"></a>
+            <a href="https://www.unesco.org/fr"><img src="images/logo-unesco.png" alt="logo-unesco"></a>
+        </div>
+        
+        <nav class="nav-entete">
+            <a href="Frise_sr.html"><h2>Ере</h2></a>
+            <a href="Nature_sr.html"><h2>Природа</h2></a>
+            <a href="Accueil_sr.html"><h2 class="actif">Почетна</h2></a>
+            <a href="Histoire_sr.html"><h2>Историја</h2></a>
+            <a href="Carte_sr.html"><h2>Мапе и резервације</h2></a>
+        </nav>
+        
+        <div class="conteneur-boutons">
+            <label for="check-equipe" class="bouton">
+                <img src="images/about-us-svgrepo-com.svg" alt="Team">
+            </label>
+            <label for="check-access" class="bouton">
+                <img src="images/disability-svgrepo-com.svg" alt="Access">
+            </label>
+            <label for="check-langue" class="bouton">
+                <img src="images/translate-01-svgrepo-com.svg" alt="Lang">
+            </label>
+        </div>
+
+        <div class="calque-modal" id="fenetre-equipe">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Ко смо ми ?</h3>
+                <div class="contenu-modal">
+                    <a href="https://blasteelex.github.io/Portfolio/" class="btn-item-modal">АНТОНИЈЕВИЋ МИОДРАГ</a>
+                    <a href="#" class="btn-item-modal">МЕУНИЕР МАТИУ</a>
+                    <a href="#" class="btn-item-modal">ТРИКОАР ЛОАН</a>
+                    <a href="#" class="btn-item-modal">ФУРО ХАРЕЛ ВАЛЕНТИН</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-access">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Приступачност</h3>
+                <div class="contenu-modal">
+                    <label for="check-daltonien" class="btn-item-modal">За далтонци</label>
+                    <label for="check-dyslexique" class="btn-item-modal">За дислекцију</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-langue">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Језици</h3>
+                <div class="contenu-modal">
+                    <a href="Accueil_fr.html"><div class="btn-item-modal">Француски</div></a>
+                    <a href="Accueil_en.html"><div class="btn-item-modal">Енглески</div></a>                    
+                    <a href="Accueil_sr.html"><div class="btn-item-modal">Српски</div></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="titre-principal">
+            <h2 class="police-dyno">Гранд Кањон</h2>
+            <p class="police-cicle">Гранд Кањон је један од најбогатијих светских геолошких места.</p>
+        </div>
+
+        <div class="menu-escalier">
+            <a href="Frise_sr.html" class="niveau-haut">
+                <div class="carte">
+                    <div class="bulle-titre">Ере</div>
+                    <div class="bulle-contenu">Ова временска линија приказује хронологију Гранд Каниона.</div>
+                </div>
+            </a>
+
+            <a href="Nature_sr.html" class="niveau-moyen">
+                <div class="carte">
+                    <div class="bulle-titre">Природа</div>
+                    <div class="bulle-contenu">Фауна и Флаура су му расноврсне као и своја геологија.</div>
+                </div>
+            </a>
+
+            <a href="Accueil_sr.html" class="niveau-bas">
+                <div class="carte">
+                    <div class="bulle-titre">Почетна</div>
+                    <div class="bulle-contenu">Овде се налази план сајта</div>
+                </div>
+            </a>
+
+            <a href="Histoire_sr.html" class="niveau-moyen">
+                <div class="carte">
+                    <div class="bulle-titre">Историја</div>
+                    <div class="bulle-contenu">Историја му је скоро разноврснија од величине.</div>
+                </div>
+            </a>
+
+            <a href="Carte_sr.html" class="niveau-haut">
+                <div class="carte">
+                    <div class="bulle-titre">Мапе и резервације</div>
+                    <div class="bulle-contenu">Да се неби изгубили и нашли место за спавање.</div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="police-cicle">
+        <p>"Исклесан Колорадом, Велики кањон, дубине скоро 1500 м, најспектакуларнија је клисура на свету. Смештен у Аризони, пролази кроз Национални парк Велики кањон." <br> --УНЕСКО-- </p>
+    </footer>
+
+    <script>
+    const modes = ['check-daltonien', 'check-dyslexique'];
+    modes.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (localStorage.getItem(id) === 'true') {
+            checkbox.checked = true;
+        }   
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(id, this.checked);
+        });
+    });
+    </script>
+
+</body>
+</html>

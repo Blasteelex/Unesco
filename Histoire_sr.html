@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Пројекат Унеско - Историја</title>
+</head>
+<body>
+
+    <div id="ecran-fond" onclick="fermerTousTiroirs()"></div>
+
+    <input type="checkbox" id="check-daltonien" class="bascule-mode" style="display:none;">
+    <input type="checkbox" id="check-dyslexique" class="bascule-mode" style="display:none;">
+    <input type="radio" name="fenetres" id="check-equipe" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-access" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-langue" class="bascule-modal">
+    <input type="radio" name="fenetres" id="fermer-tout" class="bascule-modal">
+
+    <header>
+        <div class="conteneur-logo">
+            <a href="Accueil_sr.html"><img src="images/logo_MCN_original.png" alt="logo_MCN_original"></a>
+            <a href="https://www.unesco.org/fr"><img src="images/logo-unesco.png" alt="logo-unesco"></a>
+        </div>
+        
+        <nav class="nav-entete">
+            <a href="Frise_sr.html"><h2>Ере</h2></a>
+            <a href="Nature_sr.html"><h2>Природа</h2></a>
+            <a href="Accueil_sr.html"><h2>Почетна</h2></a>
+            <a href="Histoire_sr.html"><h2 class="actif">Историја</h2></a>
+            <a href="Carte_sr.html"><h2>Мапе и резервације</h2></a>
+        </nav>
+        
+        <div class="conteneur-boutons">
+            <label for="check-equipe" class="bouton"><img src="images/about-us-svgrepo-com.svg" alt="Team"></label>
+            <label for="check-access" class="bouton"><img src="images/disability-svgrepo-com.svg" alt="Access"></label>
+            <label for="check-langue" class="bouton"><img src="images/translate-01-svgrepo-com.svg" alt="Lang"></label>
+        </div>
+
+        <div class="calque-modal" id="fenetre-access">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Приступачност</h3>
+                <div class="contenu-modal">
+                    <label for="check-daltonien" class="btn-item-modal">За далтонци</label>
+                    <label for="check-dyslexique" class="btn-item-modal">За дислекцију</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-equipe">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Ко смо ми ?</h3>
+                <div class="contenu-modal">
+                    <a href="https://blasteelex.github.io/Portfolio/" class="btn-item-modal">АНТОНИЈЕВИЋ МИОДРАГ</a>
+                    <a href="#" class="btn-item-modal">МЕУНИЕР МАТИУ</a>
+                    <a href="#" class="btn-item-modal">ТРИКОАР ЛОАН</a>
+                    <a href="#" class="btn-item-modal">ФУРО ХАРЕЛ ВАЛЕНТИН</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-langue">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Језици</h3>
+                <div class="contenu-modal">
+                    <a href="Histoire_fr.html"><div class="btn-item-modal">Француски</div></a>
+                    <a href="Histoire_en.html"><div class="btn-item-modal">Енглески</div></a>                    
+                    <a href="Histoire_sr.html"><div class="btn-item-modal">Српски</div></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="titre-principal">
+            <h2 class="police-dyno">Историја</h2>
+            <p class="police-cicle">Место окупирано миленијумима, обележено староседелачким народима и модерним истраживањима.</p>
+        </div>
+
+        <div class="menu-escalier">
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-gauche')">
+                <div class="carte">
+                    <div class="bulle-titre">Аутохтони народи</div>
+                    <div class="bulle-contenu">Историја народа Гранд Кањона.</div>
+                </div>
+            </div>
+            <div class="niveau-bas" onclick="ouvrirTiroir('tiroir-bas')">
+                <div class="carte">
+                    <div class="bulle-titre">Долазак европљана</div>
+                    <div class="bulle-contenu">Први странци у Гранд Кањону.</div>
+                </div>
+            </div>
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-droite')">
+                <div class="carte">
+                    <div class="bulle-titre">Заштићено место</div>
+                    <div class="bulle-contenu">Под заштитом УНЕСКО-а. Благодат за људе и животиње.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Аутохтони народи</h2>
+            
+            <div class="boite-intro">
+                Гранд Кањон је насељен више од 10.000 година. Неколико домородачких народа развило је своју културу, духовну традицију и начин живота прилагођен овом јединственом окружењу.
+            </div>
+
+            <div class="grille-peuples">
+                <div class="colonne-peuple">
+                    <img src="images/puebloans.jpg" alt="Puebloans">
+                    <h4>Пуеблоанс</h4>
+                    <p>Села, пољопривреда, грнчарија, станови у литицама.</p>
+                </div>
+                <div class="colonne-peuple">
+                    <img src="images/hopis.jpg" alt="Hopis">
+                    <h4>Хопи</h4>
+                    <p>Један од најстаријих народа, традиције и митови везани за кањон.</p>
+                </div>
+                <div class="colonne-peuple">
+                    <img src="images/havasupai.jpg" alt="Havasupai">
+                    <h4>Хавасупаи</h4>
+                    <p>Смештени у долинама, познати по својим усевима и баштама.</p>
+                </div>
+                <div class="colonne-peuple">
+                    <img src="images/navajo.jpg" alt="Navajo">
+                    <h4>Навахо</h4>
+                    <p>Стигли касније, важна духовна територија.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-bas" class="panneau-tiroir tiroir-bas">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Долазак Европљана</h2>
+            
+            <div class="conteneur-europe">
+                <div class="carte-europe">
+                    <h4>1540 : експедиција Карденас</h4>
+                    <p>Послат од стране Шпаније, Гарсија Лопез де Карденас стиже до јужног руба кањона. Његова група открива огромност локалитета, али не успева да се спусти. Он је први познати Европљанин који га је посматрао.</p>
+                    <img src="images/cardenas.jpg" alt="Cardenas">
+                </div>
+                <div class="carte-europe">
+                    <h4>19. век : истраживања и прегледи</h4>
+                    <p>У 19. веку војници, истраживачи и научници прелазили су регион. Направили су прва истраживања кањона, упркос опасностима и недостатку путева. Сајт је почео да се прецизно мапира.</p>
+                    <img src="images/xixe.jpg" alt="XIXe">
+                </div>
+                <div class="carte-europe">
+                    <h4>1869 : експедиција Џона Веслија Пауела</h4>
+                    <p>Године 1869. Џон Весли Пауел је водио спуст реком Колорадо са девет људи. Кретали су се непознатим брзацима и прикупљали битне податке. Ова експедиција је постала прво научно истраживање кањона.</p>
+                    <img src="images/powell.jpg" alt="Powell">
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Заштићено место</h2>
+
+            <div class="boite-intro">
+                Препознат по свом културном и природном значају, Велики кањон је постао национални споменик 1908. године, а затим национални парк 1919. године. Данас је на листи УНЕСКО-ве светске баштине.
+            </div>
+            
+            <div class="grille-protection">
+                <img src="images/prot1.jpg" alt="Img">
+                <img src="images/prot2.jpg" alt="Img">
+                <img src="images/prot3.jpg" alt="Img">
+                <img src="images/prot4.jpg" alt="Img">
+                <img src="images/prot5.jpg" alt="Img">
+                <img src="images/prot6.jpg" alt="Img">
+            </div>
+            
+            <p class="texte-bas">
+                Велики кањон, познат по својој изузетној универзалној вредности, представља велико природно и културно наслеђе. Његова историја, пејзажи и традиција староседелачких народа чине га незаменљивим местом. УНЕСКО ради на очувању овог јединственог места за будуће генерације.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="police-cicle">
+        <p>"Исклесан Колорадом, Велики кањон, дубине скоро 1500 м, најспектакуларнија је клисура на свету. Смештен у Аризони, пролази кроз Национални парк Велики кањон." <br> --УНЕСКО-- </p>
+    </footer>
+
+    <script>
+        const modes = ['check-daltonien', 'check-dyslexique'];
+        modes.forEach(id => {
+            const checkbox = document.getElementById(id);
+            if (localStorage.getItem(id) === 'true') {
+                checkbox.checked = true;
+            }   
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(id, this.checked);
+            });
+        });
+
+        const ecranFond = document.getElementById('ecran-fond');
+
+        function ouvrirTiroir(id) {
+            fermerTousTiroirs();
+            document.getElementById(id).classList.add('actif');
+            ecranFond.classList.add('actif');
+        }
+
+        function fermerTousTiroirs() {
+            const tousTiroirs = document.querySelectorAll('.panneau-tiroir');
+            tousTiroirs.forEach(d => d.classList.remove('actif'));
+            ecranFond.classList.remove('actif');
+        }
+    </script>
+
+</body>
+</html>

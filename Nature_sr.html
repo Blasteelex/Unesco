@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Унеско Пројекат - Природа</title>
+</head>
+<body>
+
+    <div id="ecran-fond" onclick="fermerTousTiroirs()"></div>
+
+    <input type="checkbox" id="check-daltonien" class="bascule-mode" style="display:none;">
+    <input type="checkbox" id="check-dyslexique" class="bascule-mode" style="display:none;">
+    <input type="radio" name="fenetres" id="check-equipe" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-access" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-langue" class="bascule-modal">
+    <input type="radio" name="fenetres" id="fermer-tout" class="bascule-modal">
+
+    <header>
+        <div class="conteneur-logo">
+            <a href="index.html"><img src="images/logo_MCN_original.png" alt="logo_MCN_original"></a>
+            <a href="https://www.unesco.org/en"><img src="images/logo-unesco.png" alt="logo-unesco"></a>
+        </div>
+        
+        <nav class="nav-entete">
+            <a href="Frise_sr.html"><h2>Ере</h2></a>
+            <a href="Nature_sr.html"><h2 class="actif">Природа</h2></a>
+            <a href="Accueil_sr.html"><h2>Почетна</h2></a>
+            <a href="Histoire_sr.html"><h2>Историја</h2></a>
+            <a href="Carte_sr.html"><h2>Мапа и резервације</h2></a>
+        </nav>
+        
+        <div class="conteneur-boutons">
+            <label for="check-equipe" class="bouton"><img src="images/about-us-svgrepo-com.svg" alt="Тим"></label>
+            <label for="check-access" class="bouton"><img src="images/disability-svgrepo-com.svg" alt="Приступ"></label>
+            <label for="check-langue" class="bouton"><img src="images/translate-01-svgrepo-com.svg" alt="Језик"></label>
+        </div>
+
+        <div class="calque-modal" id="fenetre-access">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Приступачност</h3>
+                <div class="contenu-modal">
+                    <label for="check-daltonien" class="btn-item-modal">Режим за далтонисте</label>
+                    <label for="check-dyslexique" class="btn-item-modal">Режим за дислексичаре</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-equipe">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Ко смо ми?</h3>
+                <div class="contenu-modal">
+                    <a href="https://blasteelex.github.io/Portfolio/" class="btn-item-modal">АНТОНИЈЕВИЋ МИОДРАГ</a>
+                    <a href="#" class="btn-item-modal">МЕУНИЕР МАТИУ</a>
+                    <a href="#" class="btn-item-modal">ТРИКОАР ЛОАН</a>
+                    <a href="#" class="btn-item-modal">ФУРО ХАРЕЛ ВАЛЕНТИН</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-langue">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Језици</h3>
+                <div class="contenu-modal">
+                    <a href="Nature_fr.html"><div class="btn-item-modal">Француски</div></a>
+                    <a href="Nature_en.html"><div class="btn-item-modal">Енглески</div></a>                    
+                    <a href="Nature_sr.html"><div class="btn-item-modal">Српски</div></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="titre-principal-nature">
+            <h2 class="police-dyno">Природа</h2>
+            <p class="police-cicle">"Велики кањон је једно од геолошки најбогатијих налазишта на планети."</p>
+        </div>
+
+        <div class="menu-escalier-nature">
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-gauche')">
+                <div class="carte">
+                    <div class="bulle-titre">Флора и фауна</div>
+                    <div class="bulle-contenu">Задивљујућа флора и фауна.</div>
+                </div>
+            </div>
+            
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-droite')">
+                <div class="carte">
+                    <div class="bulle-titre">Геологија</div>
+                    <div class="bulle-contenu">Геологија је древна уметност, а не само камење.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conteneur-bulle-centre">
+            <div class="bulle-info-centre">
+                Према Кепеновој класификацији климе, Национални парк Велики кањон има пет климатских зона. Зона отпорности биљака у Центру за посетиоце је 7а са просечном годишњом минималном температуром од -15,9 °C.
+            </div>
+        </div>
+
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche largeur-50">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Флора и фауна</h2>
+            
+            <div class="boite-intro">
+                Велики кањон поседује веома развијену флору и фауну која је резултат вековне еволуције.
+            </div>
+
+            <div class="grille-nature-split">
+                <div class="colonne-nature">
+                    <div class="img-nature-container">
+                        <img src="images/flore.jpg" alt="Флора кањона">
+                    </div>
+                    <div class="txt-nature-desc">
+                        <strong>Флора</strong><br>
+                        Парк Великог кањона је дом за 1.737 врста биљака, 167 врста гљива, 64 врсте маховине и 195 врста лишајева (Према Википедији).
+                    </div>
+                </div>
+
+                <div class="colonne-nature">
+                    <div class="img-nature-container">
+                        <img src="images/faune.jpg" alt="Фауна кањона">
+                    </div>
+                    <div class="txt-nature-desc">
+                        <strong>Фауна</strong><br>
+                        355 врста птица, 89 сисара, 47 гмизаваца, 9 водоземаца, 17 врста риба и хиљаде врста бескичмењака је забележено (Према Википедији).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Геологија</h2>
+
+            <div class="boite-intro">
+                Геологија Великог кањона открива слојеве стена старе милијардама година, исклесане реком Колорадо, који сведоче о еволуцији Земље.
+            </div>
+            
+            <div class="grille-nature-split">
+                <img src="images/couches.jpg" alt="Геолошки слојеви" class="img-geo-simple">
+                <img src="images/fleuve.jpg" alt="Река Колорадо" class="img-geo-simple">
+            </div>
+            
+            <div class="texte-bas">
+                Велики кањон излаже један од најпотпунијих и најпроучаванијих слојева стена на Земљи. Његових ≈ 40 видљивих седиментних слојева датира од пре око 200 милиона до скоро 2 милијарде година. У основи се налазе веома старе метаморфне и магматске стене које чине темељ. Изнад, нагнути "Супергрупа" слојеви и хоризонтални палеозојски слојеви сведоче о древним морима, плажама и фосилним пустињама. Пре 5-6 милиона година, река Колорадо је усекла ове слојеве током издизања висоравни, постепено обликујући кањон.
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="police-cicle">
+        <p>"Исклесан реком Колорадо, Велики кањон, дубине скоро 1.500 м, је најспектакуларнија клисура на свету. Смештен у Аризони, пролази кроз Национални парк Велики кањон." <br> --УНЕСКО-- </p>
+    </footer>
+
+    <script>
+        const modes = ['check-daltonien', 'check-dyslexique'];
+        modes.forEach(id => {
+            const checkbox = document.getElementById(id);
+            if (localStorage.getItem(id) === 'true') {
+                checkbox.checked = true;
+            }   
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(id, this.checked);
+            });
+        });
+
+        const ecranFond = document.getElementById('ecran-fond');
+
+        function ouvrirTiroir(id) {
+            fermerTousTiroirs();
+            document.getElementById(id).classList.add('actif');
+            ecranFond.classList.add('actif');
+        }
+
+        function fermerTousTiroirs() {
+            const tousTiroirs = document.querySelectorAll('.panneau-tiroir');
+            tousTiroirs.forEach(d => d.classList.remove('actif'));
+            ecranFond.classList.remove('actif');
+        }
+    </script>
+
+</body>
+</html>

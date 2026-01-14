@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Unesco Project - Nature</title>
+</head>
+<body>
+
+    <div id="ecran-fond" onclick="fermerTousTiroirs()"></div>
+
+    <input type="checkbox" id="check-daltonien" class="bascule-mode" style="display:none;">
+    <input type="checkbox" id="check-dyslexique" class="bascule-mode" style="display:none;">
+    <input type="radio" name="fenetres" id="check-equipe" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-access" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-langue" class="bascule-modal">
+    <input type="radio" name="fenetres" id="fermer-tout" class="bascule-modal">
+
+    <header>
+        <div class="conteneur-logo">
+            <a href="index.html"><img src="images/logo_MCN_original.png" alt="logo_MCN_original"></a>
+            <a href="https://www.unesco.org/en"><img src="images/logo-unesco.png" alt="logo-unesco"></a>
+        </div>
+        
+        <nav class="nav-entete">
+            <a href="Frise_en.html"><h2>Timeline</h2></a>
+            <a href="Nature_en.html"><h2 class="actif">Nature</h2></a>
+            <a href="Accueil_en.html"><h2>Home</h2></a>
+            <a href="Histoire_en.html"><h2>History</h2></a>
+            <a href="Carte_en.html"><h2>Map & Booking</h2></a>
+        </nav>
+        
+        <div class="conteneur-boutons">
+            <label for="check-equipe" class="bouton"><img src="images/about-us-svgrepo-com.svg" alt="Team"></label>
+            <label for="check-access" class="bouton"><img src="images/disability-svgrepo-com.svg" alt="Access"></label>
+            <label for="check-langue" class="bouton"><img src="images/translate-01-svgrepo-com.svg" alt="Language"></label>
+        </div>
+
+        <div class="calque-modal" id="fenetre-access">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Accessibility</h3>
+                <div class="contenu-modal">
+                    <label for="check-daltonien" class="btn-item-modal">Colorblind Mode</label>
+                    <label for="check-dyslexique" class="btn-item-modal">Dyslexic Mode</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-equipe">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Who are we?</h3>
+                <div class="contenu-modal">
+                    <a href="https://blasteelex.github.io/Portfolio/" class="btn-item-modal">ANTONIJEVIC MIODRAG</a>
+                    <a href="#" class="btn-item-modal">MEUNIER MATHIEU</a>
+                    <a href="#" class="btn-item-modal">TRICOIRE LOHAN</a>
+                    <a href="#" class="btn-item-modal">FOURREAU--HARRELLE VALENTIN</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-langue">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Languages</h3>
+                <div class="contenu-modal">
+                    <a href="Nature_fr.html"><div class="btn-item-modal">Français</div></a>
+                    <a href="Nature_en.html"><div class="btn-item-modal">English</div></a>                    
+                    <a href="Nature_sr.html"><div class="btn-item-modal">Serbe</div></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="titre-principal-nature">
+            <h2 class="police-dyno">Nature</h2>
+            <p class="police-cicle">"The Grand Canyon is one of the richest geological sites on the planet."</p>
+        </div>
+
+        <div class="menu-escalier-nature">
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-gauche')">
+                <div class="carte">
+                    <div class="bulle-titre">Flora and Fauna</div>
+                    <div class="bulle-contenu">Breathtaking wildlife and plants.</div>
+                </div>
+            </div>
+            
+            <div class="niveau-moyen" onclick="ouvrirTiroir('tiroir-droite')">
+                <div class="carte">
+                    <div class="bulle-titre">Geology</div>
+                    <div class="bulle-contenu">Geology is an ancient art, not just stones.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conteneur-bulle-centre">
+            <div class="bulle-info-centre">
+                According to the Köppen climate classification system, Grand Canyon National Park has five climate zones. The plant hardiness zone at Grand Canyon Visitor Center is 7a with an average annual minimum temperature of -15.9 °C.
+            </div>
+        </div>
+
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche largeur-50">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Flora and Fauna</h2>
+            
+            <div class="boite-intro">
+                The Grand Canyon possesses highly developed fauna and flora resulting from centuries of evolution.
+            </div>
+
+            <div class="grille-nature-split">
+                <div class="colonne-nature">
+                    <div class="img-nature-container">
+                        <img src="images/flore.jpg" alt="Canyon Flora">
+                    </div>
+                    <div class="txt-nature-desc">
+                        <strong>Flora</strong><br>
+                        Grand Canyon Park is home to 1,737 species of vascular plants, 167 fungi, 64 mosses, and 195 lichens (According to Wikipedia).
+                    </div>
+                </div>
+
+                <div class="colonne-nature">
+                    <div class="img-nature-container">
+                        <img src="images/faune.jpg" alt="Canyon Fauna">
+                    </div>
+                    <div class="txt-nature-desc">
+                        <strong>Fauna</strong><br>
+                        355 bird species, 89 mammals, 47 reptiles, 9 amphibians, 17 fish species, and thousands of invertebrate species have been recorded (According to Wikipedia).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+            <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
+            <h2 class="titre-tiroir">Geology</h2>
+
+            <div class="boite-intro">
+                The geology of the Grand Canyon reveals rock layers billions of years old, carved by the Colorado River and testifying to Earth's evolution.
+            </div>
+            
+            <div class="grille-nature-split">
+                <img src="images/couches.jpg" alt="Geological layers" class="img-geo-simple">
+                <img src="images/fleuve.jpg" alt="Colorado River" class="img-geo-simple">
+            </div>
+            
+            <div class="texte-bas">
+                The Grand Canyon exposes one of the most complete and studied sequences of rock layers on Earth. Its ≈ 40 visible sedimentary layers date from about 200 million to nearly 2 billion years ago. At the base are very ancient metamorphic and igneous rocks, forming the basement. Above, the tilted Supergroup and horizontal Paleozoic strata testify to ancient seas, beaches, and fossil deserts. About 5-6 million years ago, the Colorado River carved these layers during the plateau's uplift, progressively sculpting the canyon.
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="police-cicle">
+        <p>"Carved out by the Colorado River, the Grand Canyon (nearly 1,500 m deep) is the most spectacular gorge in the world. Located in the state of Arizona, it cuts across the Grand Canyon National Park." <br> --UNESCO-- </p>
+    </footer>
+
+    <script>
+        const modes = ['check-daltonien', 'check-dyslexique'];
+        modes.forEach(id => {
+            const checkbox = document.getElementById(id);
+            if (localStorage.getItem(id) === 'true') {
+                checkbox.checked = true;
+            }   
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(id, this.checked);
+            });
+        });
+
+        const ecranFond = document.getElementById('ecran-fond');
+
+        function ouvrirTiroir(id) {
+            fermerTousTiroirs();
+            document.getElementById(id).classList.add('actif');
+            ecranFond.classList.add('actif');
+        }
+
+        function fermerTousTiroirs() {
+            const tousTiroirs = document.querySelectorAll('.panneau-tiroir');
+            tousTiroirs.forEach(d => d.classList.remove('actif'));
+            ecranFond.classList.remove('actif');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Projet Unesco</title>
+</head>
+<body>
+
+    <input type="checkbox" id="check-daltonien" class="bascule-mode" style="display:none;">
+    <input type="checkbox" id="check-dyslexique" class="bascule-mode" style="display:none;">
+
+    <input type="radio" name="fenetres" id="check-equipe" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-access" class="bascule-modal">
+    <input type="radio" name="fenetres" id="check-langue" class="bascule-modal">
+    <input type="radio" name="fenetres" id="fermer-tout" class="bascule-modal">
+
+    <header>
+        <div class="conteneur-logo">
+            <a href="Accueil_fr.html"><img src="images/logo_MCN_original.png" alt="logo_MCN_original"></a>
+            <a href="https://www.unesco.org/fr"><img src="images/logo-unesco.png" alt="logo-unesco"></a>
+        </div>
+        
+        <nav class="nav-entete">
+            <a href="Frise_fr.html"><h2>Frise</h2></a>
+            <a href="Nature_fr.html"><h2>Nature</h2></a>
+            <a href="index.html"><h2 class="actif">Accueil</h2></a>
+            <a href="Histoire_fr.html"><h2>Histoire</h2></a>
+            <a href="Carte_fr.html"><h2>Carte et réservations</h2></a>
+        </nav>
+        
+        <div class="conteneur-boutons">
+            <label for="check-equipe" class="bouton"><img src="images/about-us-svgrepo-com.svg" alt="Equipe"></label>
+            <label for="check-access" class="bouton"><img src="images/disability-svgrepo-com.svg" alt="Acces"></label>
+            <label for="check-langue" class="bouton"><img src="images/translate-01-svgrepo-com.svg" alt="Langue"></label>
+        </div>
+
+        <div class="calque-modal" id="fenetre-access">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Accessibilité</h3>
+                <div class="contenu-modal">
+                    <label for="check-daltonien" class="btn-item-modal">Mode daltonien</label>
+                    <label for="check-dyslexique" class="btn-item-modal">Mode dyslexique</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-equipe">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Qui sommes-nous ?</h3>
+                <div class="contenu-modal">
+                    <a href="https://blasteelex.github.io/Portfolio/" class="btn-item-modal">ANTONIJEVIC MIODRAG</a>
+                    <a href="#" class="btn-item-modal">MEUNIER MATHIEU</a>
+                    <a href="#" class="btn-item-modal">TRICOIRE LOHAN</a>
+                    <a href="#" class="btn-item-modal">FOURREAU--HARRELLE VALENTIN</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calque-modal" id="fenetre-langue">
+            <div class="boite-modal">
+                <label for="fermer-tout" class="btn-fermer">✖</label>
+                <h3>Langues</h3>
+                <div class="contenu-modal">
+                    <a href="Accueil_fr.html"><div class="btn-item-modal">Français</div></a>
+                    <a href="Accueil_en.html"><div class="btn-item-modal">Anglais</div></a>                    
+                    <a href="Accueil_sr.html"><div class="btn-item-modal">Serbe</div></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="titre-principal">
+            <h2 class="police-dyno">Le grand canyon</h2>
+            <p class="police-cicle">Le grand canyon est l'un des sites géologiques les plus riches du monde.</p>
+        </div>
+
+        <div class="menu-escalier">
+            <a href="Frise_fr.html" class="niveau-haut">
+                <div class="carte">
+                    <div class="bulle-titre">Frise</div>
+                    <div class="bulle-contenu">Cette frise détaille la chronologie du Grand Canyon.</div>
+                </div>
+            </a>
+            <a href="Nature_fr.html" class="niveau-moyen">
+                <div class="carte">
+                    <div class="bulle-titre">Nature</div>
+                    <div class="bulle-contenu">Une faune et une flore aussi variées que sa géologie.</div>
+                </div>
+            </a>
+            <a href="index.html" class="niveau-bas">
+                <div class="carte">
+                    <div class="bulle-titre">Accueil</div>
+                    <div class="bulle-contenu">Le plan de base du site se situe ici.</div>
+                </div>
+            </a>
+            <a href="Histoire_fr.html" class="niveau-moyen">
+                <div class="carte">
+                    <div class="bulle-titre">Histoire</div>
+                    <div class="bulle-contenu">Son histoire est presque aussi grande que sa superficie.</div>
+                </div>
+            </a>
+            <a href="Carte_fr.html" class="niveau-haut">
+                <div class="carte">
+                    <div class="bulle-titre">Carte et réservations</div>
+                    <div class="bulle-contenu">Pour ne pas perdre le nord, et avoir où loger.</div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="police-cicle">
+        <p>"Sculpté par le Colorado, le Grand Canyon, de près de 1 500 m de profondeur, est la gorge la plus spectaculaire du monde. Situé dans l’Arizona, il traverse le parc national du Grand Canyon." <br> --UNESCO-- </p>
+    </footer>
+
+    <script>
+    const modes = ['check-daltonien', 'check-dyslexique'];
+    modes.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (localStorage.getItem(id) === 'true') {
+            checkbox.checked = true;
+        }   
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(id, this.checked);
+        });
+    });
+    </script>
+
+</body>
+</html>

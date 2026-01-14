@@ -798,7 +798,7 @@ footer {
     .conteneur-europe {
         flex-direction: column;
         height: auto;
-        padding-top: 450px;
+        padding-top: 5dvh;
         padding-bottom: 40px;
         align-items: stretch;
         gap: 30px;

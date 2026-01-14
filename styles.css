@@ -955,7 +955,7 @@ footer {
     justify-content: center;
     position: relative;
     z-index: 20;
-    margin-top: 1dvh;
+    margin-top: 5dvh;
 }
 
 .menu-escalier-nature a {
@@ -1003,5 +1003,6 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        margin-top: 5dvh;
     }
 }

@@ -280,10 +280,71 @@ footer {
     cursor: pointer;
 }
 
+.bascule-modal-membre {
+    display: none;
+}
+
 #check-equipe:checked~header #fenetre-equipe,
 #check-access:checked~header #fenetre-access,
 #check-langue:checked~header #fenetre-langue {
     display: flex;
+}
+
+#check-miodrag:checked~header #fenetre-miodrag,
+#check-mathieu:checked~header #fenetre-mathieu,
+#check-lohan:checked~header #fenetre-lohan,
+#check-valentin:checked~header #fenetre-valentin,
+#check-rayaan:checked~header #fenetre-rayaan {
+    display: flex;
+    z-index: 1010;
+    /* S'affiche au-dessus de la modale équipe existante */
+}
+
+/* Modales d'équipe personnelles */
+.reseaux-sociaux {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Un peu plus d'espace entre eux */
+    margin: 0 auto;
+    /* Centrage supplémentaire parfait */
+    width: 100%;
+}
+
+.btn-reseau {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex !important;
+    /* Force flex plutôt que le block de .btn-item-modal */
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    /* Force l'annulation du padding de .btn-item-modal */
+    margin: 0;
+    line-height: 0;
+    /* Évite des espaces fantômes verticaux liés au texte */
+}
+
+.btn-reseau img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    /* Supprime l'espace sous l'image */
+    object-fit: contain;
+    filter: invert(1);
+    /* Les SVG noirs deviendront blancs */
+}
+
+.btn-retour {
+    font-family: 'Titres-dyno', sans-serif;
+    font-size: 1.2rem;
+    color: var(--col-texte);
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
 }
 
 .boite-modal {

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Côte Amalfitaine - Patrimoine Mondial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #ff7700;
+            --dark-grey: #222222;
+            --light-grey: #333333;
+            --text-main: #ffffff;
+            --text-muted: #dddddd;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+
+        body {
+            background-color: var(--dark-grey);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--primary-orange);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-logo img { height: 60px; transition: var(--transition); }
+        .header-logo img:hover { transform: scale(1.05); }
+
+        .header-center { text-align: center; flex-grow: 1; }
+        .header-center h1 { font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; }
+        .header-center p { font-size: 0.9rem; font-weight: 300; opacity: 0.9; }
+
+        /* --- Navigation --- */
+        nav {
+            background-color: var(--primary-orange);
+            display: flex;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        nav button {
+            flex: 1;
+            background: none;
+            border: none;
+            color: white;
+            padding: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav button:hover { background-color: rgba(0,0,0,0.1); }
+        nav button.active { background-color: var(--light-grey); color: var(--primary-orange); }
+
+        /* --- Sections --- */
+        main { padding: 60px 10%; max-width: 1400px; margin: 0 auto; }
+
+        .section-content { display: none; animation: slideUp 0.6s ease-out; }
+        .section-content.active { display: block; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2.main-title { font-size: 3rem; margin-bottom: 50px; text-align: center; position: relative; }
+        h2.main-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--primary-orange); margin: 15px auto; }
+
+        h3.sub-title { color: var(--primary-orange); font-size: 1.8rem; margin-bottom: 20px; }
+
+        /* --- Layouts --- */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+        
+        .img-container { position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .img-container img { width: 100%; display: block; transition: var(--transition); }
+        .img-container:hover img { transform: scale(1.03); }
+
+        .circle-frame { width: 450px; height: 450px; border-radius: 50%; border: 8px solid var(--primary-orange); overflow: hidden; margin: 0 auto; }
+        .circle-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+        .text-block { padding: 20px 0; }
+        .text-block p { color: var(--text-muted); margin-bottom: 15px; }
+
+        /* --- Table --- */
+        .team-table { width: 100%; border-collapse: collapse; margin-top: 40px; background: #2a2a2a; border-radius: 15px; overflow: hidden; }
+        .team-table th { background: var(--primary-orange); color: white; padding: 20px; text-align: left; }
+        .team-table td { padding: 20px; border-bottom: 1px solid #3d3d3d; font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- Footer --- */
+        footer { background: var(--primary-orange); padding: 50px 10%; display: flex; justify-content: space-between; align-items: center; }
+        .footer-left h3 { font-size: 2rem; margin-bottom: 10px; }
+        .footer-right { text-align: right; display: flex; align-items: center; gap: 20px; }
+        .footer-right img { height: 70px; }
+
+    </style>
+</head>
+<body>
+    <div id="ecran-fond" onclick="fermerTousTiroirs()"></div>
+    <input type="checkbox" id="check-burger" style="display:none;">
+
+    <header>
+        <label for="check-burger" class="btn-burger"></label>
+        <div class="header-logo">
+            <img src="logo.png" alt="M.C.N. Logo" width="190px">
+        </div>
+        <div class="header-center" onclick="showSection('landing')" style="cursor:pointer">
+            <h1>La Côte Amalfitaine</h1>
+            <p>Patrimoine mondial de l'UNESCO</p>
+        </div>
+        <div class="header-logo">
+            <img src="UNESCO.png" alt="UNESCO Logo">
+        </div>
+    </header>
+
+    <nav>
+        <button id="btn-histoire" onclick="showSection('history')">Histoire</button>
+        <button id="btn-evenements" onclick="showSection('events')">Événements</button>
+    </nav>
+
+    <main>
+        <section id="landing-section" class="section-content active">
+            <h2 class="main-title">Un Paysage Culturel Unique</h2>
+            <div class="hero-box" style="text-align: center; margin-bottom: 80px;">
+                <p style="max-width: 800px; margin: 0 auto 40px;">Sa topographie saisissante et son évolution historique ont produit des valeurs scéniques culturelles et naturelles exceptionnelles. La nature est à la fois restée vierge et en harmonie avec les produits de l'activité humaine.</p>
+                <div class="img-container">
+                    <img src="image1.jpg" alt="Panorama">
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="text-block">
+                    <h3 class="sub-title">Présentation Géographique</h3>
+                    <p><strong>Endroit :</strong> La côte s'étend le long de la mer Tyrrhénienne.</p>
+                    <p><strong>Accès :</strong> Des routes sinueuses accrochées aux falaises offrent des panoramas à couper le souffle.</p>
+                </div>
+                <div class="img-container">
+                    <img src="carte.jpg" alt="Carte">
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="circle-frame">
+                    <img src="mangue.jpg" alt="Culture">
+                </div>
+                <div class="text-block">
+                    <h3 class="sub-title">Les cultures unique de chaque ville</h3>
+                    <p>Chaque ville possède son identité architecturale, ses fêtes traditionnelles et ses monuments historiques classés.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="history-section" class="section-content">
+            <h2 class="main-title">Histoire & Héritage</h2>
+            <div style="text-align:center; margin-bottom: 60px;">
+                <h3 class="sub-title">Introduction</h3>
+                <p style="max-width: 900px; margin: 0 auto;">La Côte amalfitaine est protégée par un ensemble de lois nationales, régionales et locales qui préservent son paysage, ses bâtiments et son patrimoine culturel, gérés par différents niveaux d’autorités à travers un plan de gestion coordonné. Elle tire son nom de la ville d'Amalfi, cœur géographique et historique de la côte. La côte amalfitaine est classée au patrimoine mondial de l'humanité depuis 1997.</p>
+                <div class="img-container" style="max-width: 800px; margin: 40px auto;">
+                    <img src="cote.png" alt="Amalfi">
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="img-container">
+                    <img src="ulysse.jpg" alt="Mythologie">
+                </div>
+                <div class="text-block">
+                    <h3 class="sub-title">Influence Culturelle</h3>
+                    <p>Inspiration pour les auteurs et cinéastes, la côte est aussi le lieu de rencontre mythique entre Ulysse et les Sirènes.</p>
+
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="img-container">
+                <img src="mers.avif" alt="Mers et oceans">
+                </div>
+                <div class="text-block">
+                    <h3 class="sub-title">Lien avec les mers et océans</h3>
+                    <p>Port et trajet maritime très développés, villes accessible que part la mer. 
+                    L'époque où Amalfi était une grande république maritime était révolue, et la ville passa sous la domination du royaume voisin de Naples à la fin du XIVe siècle. 
+                    Dépourvue de toute influence militaire et commerciale, la ville redevint peu à peu un paisible village de pêcheurs. </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events-section" class="section-content">
+            <h2 class="main-title">Événements</h2>
+            
+            <div class="grid-2">
+                <div class="text-block">
+                    <h3 class="sub-title">Les différentes villes</h3>
+                    <p>Chaque villes possèdent une histoire avec un impact dépassant la région. villes au décors pitoresque. Patrimoine et culture : Amalfi et sa cathédrale UNESCO, le Sentiero dei limoni à Minori, et l’atmosphère authentique des villages de pêcheurs. Villages iconiques : Positano et ses maisons colorées, Ravello perché avec sa terrasse de l’infini, et Sorrente capitale du citron.  Les principales cités de cette côte rocheuse spectaculaire sont, en venant de Sorrente : Positano, Praiano, Amalfi et Ravello.</p>
+                    <address>
+                        <a href = "https://fr.wikipedia.org/wiki/C%C3%B4te_amalfitaine">Wikipédia</a>
+                    </address>
+                </div>
+                <div class="img-container">
+                    <img src="falaise.jpg" alt="Villes">
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="img-container">
+                    <img src="pompei.webp" alt="Pompéi">
+                </div>
+                <div class="text-block">
+                    <h3 class="sub-title">Centres d'intérêt</h3>
+                    <p>Pompéi offre un voyage extraordinaire dans le temps, vous plongeant dans une cité romaine antique ensevelie et préservée par l'éruption du Vésuve en 79 apr. J.-C. Explorez ses rues pavées, ses temples et ses villas ornées de fresques pour un témoignage saisissant de la vie quotidienne de l'Empire romain.</p>
+                </div>
+            </div>
+
+             <div class="grid-2">
+                <div class="img-container">
+                    <img src="saint.jpg" alt="fete">
+                </div>
+                <div class="text-block">
+                    <p>Un événement attendu et ressenti par toute la  communauté, alliant spiritualité, tradition et spectacle dans un cadre  unique. Les célébrations religieuses solennelles dans la cathédrale, qui abrite les reliques de l’Apôtre, la procession évocatrice dans les rues de la vieille ville jusqu’au front de mer : l’un des moments les plus émouvants, la fameuse“course “, qui conclut le rite en portant la statue de Saint-André sur les  marches monumentales de la cathédrale, sous les applaudissements et dans l’émotion.</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="text-block">
+                    <h3 class="sub-title">Culture Culinaire</h3>
+                    <p>Gastronomie locale : Limoncello traditionnel, pâtes réputées les meilleures d’Italie, et fruits de mer frais dans un cadre paradisiaque. découverte de la gastronomie italienne : limoncelo, mozzarela di bufala, poisson et fruit de mers, sfogliatella.</p>
+                </div>
+                <div class="img-container">
+                    <img src="citron.webp" alt="culinaire">
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="text-block">
+                <p>Ses zones rurales témoignent de la faculté d'adaptation de ses habitants qui ont su tirer parti de la diversité du terrain pour le cultiver, depuis les vignobles et les vergers en terrasses sur les pentes basses, jusqu'aux grands pâturages des hautes terres.</p>
+                </div>
+                <div class="img-container">
+                    <img src="trip.jpg" alt="trip">
+                </div>
+            </div>
+
+            <div style="margin-top: 100px;">
+                <h2 class="main-title">L'Équipe du Projet</h2>
+                <table class="team-table">
+                    <tr>
+                        <th>Auteur</th>
+                        <th>Rôle</th>
+                        <th>Missions</th>
+                    </tr>
+                    <tr>
+                        <td>Grégoire</td>
+                        <td>Chef de projet</td>
+                        <td>Joue le rôle de médiateur pour l’équipe, pour pouvoir gérer les conflits, organisé la distribution des tâches et voir comment l’équipe avance sur leurs objectifs
+                            Détermine quels idées sont à garder ou non selon différents critère.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wassim</td>
+                        <td>Concepteur</td>
+                        <td>Le Concepteur est une personne créative, spécialisée dans les idées originales et la résolution de problèmes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rayaan Mohammad</td>
+                        <td>Priseur, Perfectionneur</td>
+                        <td>Le Priseur garde son sang-froid pour résoudre les problèmes, et le Perfectionneur, plus introverti, est méticuleux et attentif aux détails, apportant une grande valeur au groupe.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kiruchanth</td>
+                        <td>Soutient</td>
+                        <td>
+                            Le rôle du Soutien est d’accompagner les membres de l’équipe dans leurs tâches, d’apporter une aide en fonction des besoins. Il veille à maintenir une bonne dynamique de groupe et encourage ses coéquipiers.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <h3>Feedback</h3>
+            <p>Contactez-nous : <strong>example@mail.com</strong></p>
+        </div>
+        <div class="footer-right">
+            <p>M.C.N.<br><small>Médiation Culturelle et Numérique</small></p>
+            <img src="logo.png" alt="MCN Logo">
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Cacher tout
+            document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+
+            // Afficher la bonne section
+            if (sectionId === 'landing') {
+                document.getElementById('landing-section').classList.add('active');
+            } else if (sectionId === 'history') {
+                document.getElementById('history-section').classList.add('active');
+                document.getElementById('btn-histoire').classList.add('active');
+            } else if (sectionId === 'events') {
+                document.getElementById('events-section').classList.add('active');
+                document.getElementById('btn-evenements').classList.add('active');
+            }
+            // Scroll en haut fluide
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <!-- Modal générique pour les images -->
+    <div class="calque-modal" id="modal-image-generique">
+        <div class="label-fond-fermer" onclick="fermerModalImage()"></div>
+        <div class="boite-modal boite-image-modal">
+            <label class="btn-fermer" onclick="fermerModalImage()">✖</label>
+            <img id="image-en-grand" src="" alt="Image agrandie">
+        </div>
+    </div>
+    
+    <script>
+        function fermerModalImage() {
+            document.getElementById('modal-image-generique').classList.remove('actif');
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img:not(#image-en-grand):not(.header-logo img):not(.conteneur-logo img):not(footer img)');
+            images.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Évite de déclencher d'autres clics
+                    const modal = document.getElementById('modal-image-generique');
+                    const imgEnGrand = document.getElementById('image-en-grand');
+                    imgEnGrand.src = this.src;
+                    modal.classList.add('actif');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

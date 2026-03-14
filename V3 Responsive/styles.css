@@ -88,6 +88,18 @@ body:has(#check-dyslexique:checked) {
     font-family: 'OpenDyslexic', sans-serif !important;
 }
 
+body:has(#check-dyslexique:checked) .bulle-titre {
+    font-size: 1.6rem;
+}
+
+body:has(#check-dyslexique:checked) .bulle-contenu {
+    font-size: 1.35rem;
+}
+
+body:has(#check-dyslexique:checked) p {
+    font-size: 20px;
+}
+
 body:has(#check-dyslexique:checked) .police-dyno,
 body:has(#check-dyslexique:checked) .police-cicle,
 body:has(#check-dyslexique:checked) h1,
@@ -544,6 +556,7 @@ footer {
     font-weight: bold;
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
+    font-size: 1.6rem;
     font-family: 'Titres-dyno', sans-serif;
 }
 
@@ -555,6 +568,7 @@ footer {
     border-bottom-left-radius: 45px;
     border-bottom-right-radius: 45px;
     flex-grow: 1;
+    font-size: 1.35rem;
     min-height: 80px;
     font-family: 'Textes-cicle', sans-serif;
 }
@@ -566,7 +580,7 @@ footer {
     border-radius: 50px;
     text-align: center;
     font-family: 'Textes-cicle', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.50rem;
     width: 60%;
     max-width: 700px;
     line-height: 1.4;

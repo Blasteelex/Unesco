@@ -200,7 +200,7 @@
             </div>
         </div>
 
-        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche">
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Аутохтони народи</h2>
 
@@ -209,26 +209,26 @@
                 духовну традицију и начин живота прилагођен овом јединственом окружењу.
             </div>
 
-            <div class="grille-peuples">
-                <div class="colonne-peuple">
-                    <img src="images/puebloans.jpg" alt="Puebloans">
+            <div class="conteneur-europe">
+                <div class="carte-europe">
                     <h4>Пуеблоанс</h4>
                     <p>Села, пољопривреда, грнчарија, станови у литицама.</p>
+                    <img src="images/puebloans.jpg" alt="Puebloans">
                 </div>
-                <div class="colonne-peuple">
-                    <img src="images/hopis.jpg" alt="Hopis">
+                <div class="carte-europe">
                     <h4>Хопи</h4>
                     <p>Један од најстаријих народа, традиције и митови везани за кањон.</p>
+                    <img src="images/hopis.jpg" alt="Hopis">
                 </div>
-                <div class="colonne-peuple">
-                    <img src="images/havasupai.jpg" alt="Havasupai">
+                <div class="carte-europe">
                     <h4>Хавасупаи</h4>
                     <p>Смештени у долинама, познати по својим усевима и баштама.</p>
+                    <img src="images/havasupai.jpg" alt="Havasupai">
                 </div>
-                <div class="colonne-peuple">
-                    <img src="images/navajo.jpg" alt="Navajo">
+                <div class="carte-europe">
                     <h4>Навахо</h4>
                     <p>Стигли касније, важна духовна територија.</p>
+                    <img src="images/navajo.jpg" alt="Navajo">
                 </div>
             </div>
         </div>
@@ -261,7 +261,7 @@
             </div>
         </div>
 
-        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Заштићено место</h2>
 
@@ -270,20 +270,28 @@
                 године, а затим национални парк 1919. године. Данас је на листи УНЕСКО-ве светске баштине.
             </div>
 
-            <div class="grille-protection">
-                <img src="images/prot1.jpg" alt="Img">
-                <img src="images/prot2.jpg" alt="Img">
-                <img src="images/prot3.jpg" alt="Img">
-                <img src="images/prot4.jpg" alt="Img">
-                <img src="images/prot5.jpg" alt="Img">
-                <img src="images/prot6.jpg" alt="Img">
+            <div class="conteneur-europe" style="align-items: stretch;">
+                <div class="carte-europe" style="flex: 1.5;">
+                    <h4>Слике парка</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 10px; width: 100%; height: 100%; margin-top: 20px;">
+                        <img src="images/prot1.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot2.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot3.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot4.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot5.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot6.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Светска баштина</h4>
+                    <p style="text-align: justify; font-size: 1.2rem;">
+                        Велики кањон, познат по својој изузетној универзалној вредности, представља велико природно и културно
+                        наслеђе. Његова историја, пејзажи и традиција староседелачких народа чине га незаменљивим местом. УНЕСКО
+                        ради на очувању овог јединственог места за будуће генерације.
+                    </p>
+                    <img src="images/logo-unesco.png" alt="UNESCO" style="object-fit: contain; background: var(--col-secondaire); padding: 10px; box-sizing: border-box;">
+                </div>
             </div>
-
-            <p class="texte-bas">
-                Велики кањон, познат по својој изузетној универзалној вредности, представља велико природно и културно
-                наслеђе. Његова историја, пејзажи и традиција староседелачких народа чине га незаменљивим местом. УНЕСКО
-                ради на очувању овог јединственог места за будуће генерације.
-            </p>
         </div>
 
     </main>

@@ -200,7 +200,7 @@
             </div>
         </div>
 
-        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche">
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Indigenous Peoples</h2>
 
@@ -209,26 +209,26 @@
                 their cultures, spiritual traditions, and lifestyles adapted to this unique environment.
             </div>
 
-            <div class="grille-peuples">
-                <div class="colonne-peuple">
-                    <img src="images/puebloans.jpg" alt="Puebloans">
+            <div class="conteneur-europe">
+                <div class="carte-europe">
                     <h4>The Ancestral Puebloans</h4>
                     <p>Villages, agriculture, pottery, cliff dwellings.</p>
+                    <img src="images/puebloans.jpg" alt="Puebloans">
                 </div>
-                <div class="colonne-peuple">
-                    <img src="images/hopis.jpg" alt="Hopis">
+                <div class="carte-europe">
                     <h4>The Hopis</h4>
                     <p>One of the oldest peoples, traditions and myths linked to the canyon.</p>
+                    <img src="images/hopis.jpg" alt="Hopis">
                 </div>
-                <div class="colonne-peuple">
-                    <img src="images/havasupai.jpg" alt="Havasupai">
+                <div class="carte-europe">
                     <h4>The Havasupai</h4>
                     <p>Settled in the valleys, renowned for their crops and gardens.</p>
+                    <img src="images/havasupai.jpg" alt="Havasupai">
                 </div>
-                <div class="colonne-peuple">
-                    <img src="images/navajo.jpg" alt="Navajo">
+                <div class="carte-europe">
                     <h4>The Navajo</h4>
                     <p>Arrived later, important spiritual territory.</p>
+                    <img src="images/navajo.jpg" alt="Navajo">
                 </div>
             </div>
         </div>
@@ -262,7 +262,7 @@
             </div>
         </div>
 
-        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">A protected site</h2>
 
@@ -271,20 +271,28 @@
                 and then a National Park in 1919. Today, it is listed as a UNESCO World Heritage Site.
             </div>
 
-            <div class="grille-protection">
-                <img src="images/prot1.jpg" alt="Img">
-                <img src="images/prot2.jpg" alt="Img">
-                <img src="images/prot3.jpg" alt="Img">
-                <img src="images/prot4.jpg" alt="Img">
-                <img src="images/prot5.jpg" alt="Img">
-                <img src="images/prot6.jpg" alt="Img">
+            <div class="conteneur-europe" style="align-items: stretch;">
+                <div class="carte-europe" style="flex: 1.5;">
+                    <h4>Park Images</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 10px; width: 100%; height: 100%; margin-top: 20px;">
+                        <img src="images/prot1.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot2.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot3.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot4.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot5.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                        <img src="images/prot6.jpg" alt="Img" style="margin:0; height:100%; width:100%; border:2px solid white; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>World Heritage</h4>
+                    <p style="text-align: justify; font-size: 1.2rem;">
+                        The Grand Canyon, recognized for its exceptional universal value, represents a major natural and
+                        cultural heritage. Its history, landscapes, and the traditions of indigenous peoples make it an
+                        irreplaceable site. UNESCO works to preserve this unique place for future generations.
+                    </p>
+                    <img src="images/logo-unesco.png" alt="UNESCO" style="object-fit: contain; background: var(--col-secondaire); padding: 10px; box-sizing: border-box;">
+                </div>
             </div>
-
-            <p class="texte-bas">
-                The Grand Canyon, recognized for its exceptional universal value, represents a major natural and
-                cultural heritage. Its history, landscapes, and the traditions of indigenous peoples make it an
-                irreplaceable site. UNESCO works to preserve this unique place for future generations.
-            </p>
         </div>
 
     </main>

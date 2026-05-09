@@ -203,7 +203,7 @@
             </div>
         </div>
 
-        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche largeur-50">
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Flora and Fauna</h2>
 
@@ -211,32 +211,21 @@
                 The Grand Canyon possesses highly developed fauna and flora resulting from centuries of evolution.
             </div>
 
-            <div class="grille-nature-split">
-                <div class="colonne-nature">
-                    <div class="img-nature-container">
-                        <img src="images/flore.jpg" alt="Canyon Flora">
-                    </div>
-                    <div class="txt-nature-desc">
-                        <strong>Flora</strong><br>
-                        Grand Canyon Park is home to 1,737 species of vascular plants, 167 fungi, 64 mosses, and 195
-                        lichens (According to Wikipedia).
-                    </div>
+            <div class="conteneur-europe">
+                <div class="carte-europe">
+                    <h4>Flora</h4>
+                    <p>Grand Canyon Park is home to 1,737 species of vascular plants, 167 fungi, 64 mosses, and 195 lichens (According to Wikipedia).</p>
+                    <img src="images/flore.jpg" alt="Canyon Flora">
                 </div>
-
-                <div class="colonne-nature">
-                    <div class="img-nature-container">
-                        <img src="images/faune.jpg" alt="Canyon Fauna">
-                    </div>
-                    <div class="txt-nature-desc">
-                        <strong>Fauna</strong><br>
-                        355 bird species, 89 mammals, 47 reptiles, 9 amphibians, 17 fish species, and thousands of
-                        invertebrate species have been recorded (According to Wikipedia).
-                    </div>
+                <div class="carte-europe">
+                    <h4>Fauna</h4>
+                    <p>355 bird species, 89 mammals, 47 reptiles, 9 amphibians, 17 fish species, and thousands of invertebrate species have been recorded (According to Wikipedia).</p>
+                    <img src="images/faune.jpg" alt="Canyon Fauna">
                 </div>
             </div>
         </div>
 
-        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Geology</h2>
 
@@ -245,18 +234,17 @@
                 and testifying to Earth's evolution.
             </div>
 
-            <div class="grille-nature-split">
-                <img src="images/couches.jpg" alt="Geological layers" class="img-geo-simple">
-                <img src="images/fleuve.jpg" alt="Colorado River" class="img-geo-simple">
-            </div>
-
-            <div class="texte-bas">
-                The Grand Canyon exposes one of the most complete and studied sequences of rock layers on Earth. Its ≈
-                40 visible sedimentary layers date from about 200 million to nearly 2 billion years ago. At the base are
-                very ancient metamorphic and igneous rocks, forming the basement. Above, the tilted Supergroup and
-                horizontal Paleozoic strata testify to ancient seas, beaches, and fossil deserts. About 5-6 million
-                years ago, the Colorado River carved these layers during the plateau's uplift, progressively sculpting
-                the canyon.
+            <div class="conteneur-europe" style="align-items: stretch;">
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Formation</h4>
+                    <p style="text-align: justify;">The Grand Canyon exposes one of the most complete and studied sequences of rock layers on Earth. Its ≈ 40 visible sedimentary layers date from about 200 million to nearly 2 billion years ago. At the base are very ancient metamorphic and igneous rocks, forming the basement.</p>
+                    <img src="images/couches.jpg" alt="Geological layers">
+                </div>
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Evolution</h4>
+                    <p style="text-align: justify;">Above, the tilted Supergroup and horizontal Paleozoic strata testify to ancient seas, beaches, and fossil deserts. About 5-6 million years ago, the Colorado River carved these layers during the plateau's uplift, progressively sculpting the canyon.</p>
+                    <img src="images/fleuve.jpg" alt="Colorado River">
+                </div>
             </div>
         </div>
 

@@ -205,7 +205,7 @@
             </div>
         </div>
 
-        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche largeur-50">
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">La faune et la flore</h2>
 
@@ -213,32 +213,21 @@
                 Le grand canyon possède une faune et une flore très élaborés qui découle de siècles d'évolution.
             </div>
 
-            <div class="grille-nature-split">
-                <div class="colonne-nature">
-                    <div class="img-nature-container">
-                        <img src="images/flore.jpg" alt="Flore du canyon">
-                    </div>
-                    <div class="txt-nature-desc">
-                        <strong>Flore</strong><br>
-                        Le parc du Grand Canyon abrite 1737 espèces de plantes, 167 de champignons, 64 de mousses et 195
-                        de lichens (Selon Wikipédia).
-                    </div>
+            <div class="conteneur-europe">
+                <div class="carte-europe">
+                    <h4>Flore</h4>
+                    <p>Le parc du Grand Canyon abrite 1737 espèces de plantes, 167 de champignons, 64 de mousses et 195 de lichens (Selon Wikipédia).</p>
+                    <img src="images/flore.jpg" alt="Flore du canyon">
                 </div>
-
-                <div class="colonne-nature">
-                    <div class="img-nature-container">
-                        <img src="images/faune.jpg" alt="Faune du canyon">
-                    </div>
-                    <div class="txt-nature-desc">
-                        <strong>Faune</strong><br>
-                        355 espèces d'oiseaux, 89 de mammifères, 47 de reptiles, 9 d'amphibiens, 17 de poissons et des
-                        milliers d'espèces d'invertébrés sont recensées (Selon Wikipédia).
-                    </div>
+                <div class="carte-europe">
+                    <h4>Faune</h4>
+                    <p>355 espèces d'oiseaux, 89 de mammifères, 47 de reptiles, 9 d'amphibiens, 17 de poissons et des milliers d'espèces d'invertébrés sont recensées (Selon Wikipédia).</p>
+                    <img src="images/faune.jpg" alt="Faune du canyon">
                 </div>
             </div>
         </div>
 
-        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Géologie</h2>
 
@@ -247,18 +236,17 @@
                 fleuve Colorado et témoignant de l'évolution de la Terre.
             </div>
 
-            <div class="grille-nature-split">
-                <img src="images/couches.jpg" alt="Couches géologiques" class="img-geo-simple">
-                <img src="images/fleuve.jpg" alt="Fleuve Colorado" class="img-geo-simple">
-            </div>
-
-            <div class="texte-bas">
-                Le Grand Canyon expose l'un des empilements de couches rocheuses les plus complets et étudiés de la
-                Terre. Ses ≈ 40 couches sédimentaires visibles datent d'environ 200 millions à presque 2 milliards
-                d'années. À la base se trouvent des roches très anciennes, métamorphiques et magmatiques, formant le
-                socle. Au-dessus, le Supergroup incliné puis les strates horizontales paléozoïques témoignent
-                d'anciennes mers, plages et déserts fossiles. Il y a 5-6 millions d'années, le fleuve Colorado a
-                entaillé ces couches lors du soulèvement du plateau, sculptant progressivement le canyon.
+            <div class="conteneur-europe" style="align-items: stretch;">
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Formation</h4>
+                    <p style="text-align: justify;">Le Grand Canyon expose l'un des empilements de couches rocheuses les plus complets et étudiés de la Terre. Ses ≈ 40 couches sédimentaires visibles datent d'environ 200 millions à presque 2 milliards d'années. À la base se trouvent des roches très anciennes, métamorphiques et magmatiques, formant le socle.</p>
+                    <img src="images/couches.jpg" alt="Couches géologiques">
+                </div>
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Évolution</h4>
+                    <p style="text-align: justify;">Au-dessus, le Supergroup incliné puis les strates horizontales paléozoïques témoignent d'anciennes mers, plages et déserts fossiles. Il y a 5-6 millions d'années, le fleuve Colorado a entaillé ces couches lors du soulèvement du plateau, sculptant progressivement le canyon.</p>
+                    <img src="images/fleuve.jpg" alt="Fleuve Colorado">
+                </div>
             </div>
         </div>
 

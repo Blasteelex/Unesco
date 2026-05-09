@@ -203,7 +203,7 @@
             </div>
         </div>
 
-        <div id="tiroir-gauche" class="panneau-tiroir tiroir-gauche largeur-50">
+        <div id="tiroir-gauche" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Флора и фауна</h2>
 
@@ -211,32 +211,21 @@
                 Велики кањон поседује веома развијену флору и фауну која је резултат вековне еволуције.
             </div>
 
-            <div class="grille-nature-split">
-                <div class="colonne-nature">
-                    <div class="img-nature-container">
-                        <img src="images/flore.jpg" alt="Флора кањона">
-                    </div>
-                    <div class="txt-nature-desc">
-                        <strong>Флора</strong><br>
-                        Парк Великог кањона је дом за 1.737 врста биљака, 167 врста гљива, 64 врсте маховине и 195 врста
-                        лишајева (Према Википедији).
-                    </div>
+            <div class="conteneur-europe">
+                <div class="carte-europe">
+                    <h4>Флора</h4>
+                    <p>Парк Великог кањона је дом за 1.737 врста биљака, 167 врста гљива, 64 врсте маховине и 195 врста лишајева (Према Википедији).</p>
+                    <img src="images/flore.jpg" alt="Флора кањона">
                 </div>
-
-                <div class="colonne-nature">
-                    <div class="img-nature-container">
-                        <img src="images/faune.jpg" alt="Фауна кањона">
-                    </div>
-                    <div class="txt-nature-desc">
-                        <strong>Фауна</strong><br>
-                        355 врста птица, 89 сисара, 47 гмизаваца, 9 водоземаца, 17 врста риба и хиљаде врста
-                        бескичмењака је забележено (Према Википедији).
-                    </div>
+                <div class="carte-europe">
+                    <h4>Фауна</h4>
+                    <p>355 врста птица, 89 сисара, 47 гмизаваца, 9 водоземаца, 17 врста риба и хиљаде врста бескичмењака је забележено (Према Википедији).</p>
+                    <img src="images/faune.jpg" alt="Фауна кањона">
                 </div>
             </div>
         </div>
 
-        <div id="tiroir-droite" class="panneau-tiroir tiroir-droite">
+        <div id="tiroir-droite" class="panneau-tiroir tiroir-bas">
             <div class="btn-fermer-tiroir" onclick="fermerTousTiroirs()">✖</div>
             <h2 class="titre-tiroir">Геологија</h2>
 
@@ -245,17 +234,17 @@
                 сведоче о еволуцији Земље.
             </div>
 
-            <div class="grille-nature-split">
-                <img src="images/couches.jpg" alt="Геолошки слојеви" class="img-geo-simple">
-                <img src="images/fleuve.jpg" alt="Река Колорадо" class="img-geo-simple">
-            </div>
-
-            <div class="texte-bas">
-                Велики кањон излаже један од најпотпунијих и најпроучаванијих слојева стена на Земљи. Његових ≈ 40
-                видљивих седиментних слојева датира од пре око 200 милиона до скоро 2 милијарде година. У основи се
-                налазе веома старе метаморфне и магматске стене које чине темељ. Изнад, нагнути "Супергрупа" слојеви и
-                хоризонтални палеозојски слојеви сведоче о древним морима, плажама и фосилним пустињама. Пре 5-6 милиона
-                година, река Колорадо је усекла ове слојеве током издизања висоравни, постепено обликујући кањон.
+            <div class="conteneur-europe" style="align-items: stretch;">
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Формирање</h4>
+                    <p style="text-align: justify;">Велики кањон излаже један од најпотпунијих и најпроучаванијих слојева стена на Земљи. Његових ≈ 40 видљивих седиментних слојева датира од пре око 200 милиона до скоро 2 милијарде година. У основи се налазе веома старе метаморфне и магматске стене које чине темељ.</p>
+                    <img src="images/couches.jpg" alt="Геолошки слојеви">
+                </div>
+                <div class="carte-europe" style="flex: 1;">
+                    <h4>Еволуција</h4>
+                    <p style="text-align: justify;">Изнад, нагнути "Супергрупа" слојеви и хоризонтални палеозојски слојеви сведоче о древним морима, плажама и фосилним пустињама. Пре 5-6 милиона година, река Колорадо је усекла ове слојеве током издизања висоравни, постепено обликујући кањон.</p>
+                    <img src="images/fleuve.jpg" alt="Река Колорадо">
+                </div>
             </div>
         </div>
 

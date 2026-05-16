@@ -173,14 +173,223 @@
 
 
     <main>
-        <div class="titre-principal">
-            <h2 class="police-dyno">Timeline</h2>
-            <p class="police-cicle">Timeline content coming soon...</p>
+<div class="conteneur-global-frise">
+            <!-- Boutons radios invisibles pour les 5 filtres -->
+            <input type="radio" name="filtre-frise" id="frise-periode-1" checked>
+            <input type="radio" name="filtre-frise" id="frise-periode-2">
+            <input type="radio" name="filtre-frise" id="frise-periode-3">
+            <input type="radio" name="filtre-frise" id="frise-periode-4">
+            <input type="radio" name="filtre-frise" id="frise-periode-5">
+
+            <!-- Les boutons (labels) -->
+            <div class="menu-filtres-frise police-dyno">
+                <label for="frise-periode-1" class="btn-filtre btn-f1">I. Geological Time</label>
+                <label for="frise-periode-2" class="btn-filtre btn-f2">II. Native Peoples</label>
+                <label for="frise-periode-3" class="btn-filtre btn-f3">III. Exploration</label>
+                <label for="frise-periode-4" class="btn-filtre btn-f4">IV. National Park</label>
+                <label for="frise-periode-5" class="btn-filtre btn-f5">V. Contemporary Era</label>
+            </div>
+
+            <!-- Conteneur de la frise -->
+            <div class="zone-frise police-cicle">
+                <div class="ligne-verticale"></div>
+
+                <!-- PERIODE I -->
+                <div class="periode-frise bloc-periode-1">
+                    <div class="intro-periode intro-f1">
+                        <h3>Part « landscape foundation »</h3>
+                        <p>–2 billion → –5 million years</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 gauche">
+                        <div class="point-frise pt-f1">🪨</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–1.7 billion years</span>
+                            <p>Formation of the Vishnu schist (oldest visible rocks).</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 droite">
+                        <div class="point-frise pt-f1">⛰️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–270 million years</span>
+                            <p>Deposition of the Kaibab limestone (upper layers).</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 gauche">
+                        <div class="point-frise pt-f1">🪨</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–70 to –50 million years</span>
+                            <p>Uplift of the Colorado Plateau.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 droite">
+                        <div class="point-frise pt-f1">⛰️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–6 to –5 million years</span>
+                            <p>Beginning of the canyon's carving by the Colorado River. Progressive formation of different zones (West and East independent, Marble Canyon more recent).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE II -->
+                <div class="periode-frise bloc-periode-2">
+                    <div class="intro-periode intro-f2">
+                        <h3>Part « human presence before Europe »</h3>
+                        <p>–4000 years → today</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 gauche">
+                        <div class="point-frise pt-f2">🏹</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">≈ –4000 years</span>
+                            <p>First human occupations.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 droite">
+                        <div class="point-frise pt-f2">🏕️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Anasazis (Ancestral Puebloans)</span>
+                            <p>Agriculture and habitats adapted to the canyon.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 gauche">
+                        <div class="point-frise pt-f2">🏹</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Current tribes</span>
+                            <p>Havasupai, Hualapai, Hopi, Navajo, Southern Paiute, Zuni.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 droite">
+                        <div class="point-frise pt-f2">🏕️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Today</span>
+                            <p>Havasupai living in Havasu Canyon, rise of cultural tourism.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE III -->
+                <div class="periode-frise bloc-periode-3">
+                    <div class="intro-periode intro-f3">
+                        <h3>Part « western perspective »</h3>
+                        <p>1540 → 1890</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f3 gauche">
+                        <div class="point-frise pt-f3">🧭</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1540</span>
+                            <p>Discovery by García López de Cárdenas.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f3 droite">
+                        <div class="point-frise pt-f3">🚣</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1869</span>
+                            <p>John Wesley Powell explores the Colorado River.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f3 gauche">
+                        <div class="point-frise pt-f3">🧭</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Late 19th Century</span>
+                            <p>First scientific studies and maps.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE IV -->
+                <div class="periode-frise bloc-periode-4">
+                    <div class="intro-periode intro-f4">
+                        <h3>Part « site preservation »</h3>
+                        <p>1893 → 1979</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 gauche">
+                        <div class="point-frise pt-f4">🌿</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1893</span>
+                            <p>The site becomes a Forest Reserve.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 droite">
+                        <div class="point-frise pt-f4">🏞️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1908</span>
+                            <p>Proclamation of the National Monument.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 gauche">
+                        <div class="point-frise pt-f4">🌿</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1919</span>
+                            <p>Official creation of Grand Canyon National Park.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 droite">
+                        <div class="point-frise pt-f4">🏞️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1975</span>
+                            <p>Integration of Marble Canyon into the national park.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 gauche">
+                        <div class="point-frise pt-f4">🌿</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1979</span>
+                            <p>UNESCO World Heritage classification.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE V -->
+                <div class="periode-frise bloc-periode-5">
+                    <div class="intro-periode intro-f5">
+                        <h3>Part « tourism & challenges »</h3>
+                        <p>1980 → today</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f5 gauche">
+                        <div class="point-frise pt-f5">🌍</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1990s</span>
+                            <p>Reintroduction of the California condor to the region.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f5 droite">
+                        <div class="point-frise pt-f5">👣</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">2007</span>
+                            <p>Construction of the Skywalk, symbol of modern tourism (Hualapai tribe).</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f5 gauche">
+                        <div class="point-frise pt-f5">🌍</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Today</span>
+                            <p>4.5 million visitors per year. Environmental threats: climate, drought, fires, and dams.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div style="height: 50vh; display: flex; align-items: center; justify-content: center;">
-            <p class="police-cicle" style="font-size: 1.5rem; text-align: center;">Timeline content coming soon...</p>
-        </div>
-    </main>
+    
+</main>
 
     <footer class="police-cicle">
         <p>"Carved out by the Colorado River, the Grand Canyon (nearly 1,500 m deep) is the most spectacular gorge in

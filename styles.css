@@ -1325,3 +1325,216 @@ footer {
         max-width: 100%;
     }
 }
+/* --- STYLES DE LA FRISE CHRONOLOGIQUE ---  */
+/* ========================================= */
+.conteneur-global-frise {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+input[name="filtre-frise"] {
+    display: none;
+}
+
+.menu-filtres-frise {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.btn-filtre {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.btn-filtre:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Couleurs spécifiques - Marron/Orange */
+#frise-periode-1:checked ~ .menu-filtres-frise .btn-f1 { background-color: #8b4513; border-color: #d2691e; font-weight: bold; }
+/* Ocre/Vert */
+#frise-periode-2:checked ~ .menu-filtres-frise .btn-f2 { background-color: #a0522d; border-color: #556b2f; font-weight: bold; }
+/* Jaune/Sable */
+#frise-periode-3:checked ~ .menu-filtres-frise .btn-f3 { background-color: #daa520; border-color: #f4a460; color: black; font-weight: bold; }
+/* Verte */
+#frise-periode-4:checked ~ .menu-filtres-frise .btn-f4 { background-color: #2e8b57; border-color: #3cb371; font-weight: bold; }
+/* Bleue */
+#frise-periode-5:checked ~ .menu-filtres-frise .btn-f5 { background-color: #4682b4; border-color: #5f9ea0; font-weight: bold; }
+
+/* --- LOGIQUE D'AFFICHAGE DES PERIODES --- */
+.periode-frise {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+#frise-periode-1:checked ~ .zone-frise .bloc-periode-1,
+#frise-periode-2:checked ~ .zone-frise .bloc-periode-2,
+#frise-periode-3:checked ~ .zone-frise .bloc-periode-3,
+#frise-periode-4:checked ~ .zone-frise .bloc-periode-4,
+#frise-periode-5:checked ~ .zone-frise .bloc-periode-5 {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- STRUCTURE DE LA FRISE VERTICALE --- */
+.zone-frise {
+    position: relative;
+    padding: 40px 0;
+}
+
+.ligne-verticale {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.intro-periode {
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.intro-periode h3 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+}
+.intro-periode p {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.intro-f1 h3 { color: #d2691e; }
+.intro-f2 h3 { color: #a0522d; }
+.intro-f3 h3 { color: #daa520; }
+.intro-f4 h3 { color: #3cb371; }
+.intro-f5 h3 { color: #5f9ea0; }
+
+
+.carte-evenement {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.carte-evenement.gauche { left: 0; text-align: right; }
+.carte-evenement.droite { left: 50%; text-align: left; }
+
+.point-frise {
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #222;
+    border: 4px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+}
+
+.carte-evenement.gauche .point-frise { right: -25px; }
+.carte-evenement.droite .point-frise { left: -25px; }
+
+.pt-f1 { border-color: #d2691e; }
+.pt-f2 { border-color: #a0522d; }
+.pt-f3 { border-color: #daa520; }
+.pt-f4 { border-color: #3cb371; }
+.pt-f5 { border-color: #5f9ea0; }
+
+.contenu-evenement {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-top: 4px solid white;
+    position: relative;
+}
+
+.contenu-evenement::before {
+    content: " ";
+    position: absolute;
+    top: 25px;
+    border: solid transparent;
+    border-width: 10px;
+    pointer-events: none;
+}
+
+.carte-evenement.gauche .contenu-evenement::before {
+    left: 100%;
+    border-left-color: rgba(0, 0, 0, 0.6);
+}
+
+.carte-evenement.droite .contenu-evenement::before {
+    right: 100%;
+    border-right-color: rgba(0, 0, 0, 0.6);
+}
+
+.ev-f1 .contenu-evenement { border-top-color: #d2691e; }
+.ev-f2 .contenu-evenement { border-top-color: #a0522d; }
+.ev-f3 .contenu-evenement { border-top-color: #daa520; }
+.ev-f4 .contenu-evenement { border-top-color: #3cb371; }
+.ev-f5 .contenu-evenement { border-top-color: #5f9ea0; }
+
+.date-evenement {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.contenu-evenement p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #eee;
+    line-height: 1.5;
+}
+
+/* Permettre le defilement mais cacher la barre visuellement sur Carte et Frise */
+html:has(body.page-frise), html:has(body.page-carte),
+body.page-frise, body.page-carte {
+    overflow-y: auto !important;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html:has(body.page-frise)::-webkit-scrollbar, html:has(body.page-carte)::-webkit-scrollbar,
+body.page-frise::-webkit-scrollbar, body.page-carte::-webkit-scrollbar {
+    display: none;
+}
+
+

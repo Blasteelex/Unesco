@@ -173,14 +173,224 @@
 
 
     <main>
-        <div class="titre-principal">
-            <h2 class="police-dyno">Ере</h2>
-            <p class="police-cicle">Садржај ера ускоро...</p>
+<div class="conteneur-global-frise">
+            <!-- Boutons radios invisibles pour les 5 filtres -->
+            <input type="radio" name="filtre-frise" id="frise-periode-1" checked>
+            <input type="radio" name="filtre-frise" id="frise-periode-2">
+            <input type="radio" name="filtre-frise" id="frise-periode-3">
+            <input type="radio" name="filtre-frise" id="frise-periode-4">
+            <input type="radio" name="filtre-frise" id="frise-periode-5">
+
+            <!-- Les boutons (labels) -->
+            <div class="menu-filtres-frise police-dyno">
+                <label for="frise-periode-1" class="btn-filtre btn-f1">I. Геолошко време</label>
+                <label for="frise-periode-2" class="btn-filtre btn-f2">II. Домородачки народи</label>
+                <label for="frise-periode-3" class="btn-filtre btn-f3">III. Истраживање</label>
+                <label for="frise-periode-4" class="btn-filtre btn-f4">IV. Национални парк</label>
+                <label for="frise-periode-5" class="btn-filtre btn-f5">V. Савремено доба</label>
+            </div>
+
+            <!-- Conteneur de la frise -->
+            <div class="zone-frise police-cicle">
+                <div class="ligne-verticale"></div>
+
+                <!-- PERIODE I -->
+                <div class="periode-frise bloc-periode-1">
+                    <div class="intro-periode intro-f1">
+                        <h3>Део « темељи пејзажа »</h3>
+                        <p>–2 милијарде → –5 милиона година</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 gauche">
+                        <div class="point-frise pt-f1">🪨</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–1,7 милијарди година</span>
+                            <p>Формирање шкриљаца Вишну (најстарије видљиве стене).</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 droite">
+                        <div class="point-frise pt-f1">⛰️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–270 милиона година</span>
+                            <p>Таложење кречњака Каибаб (горњи слојеви).</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 gauche">
+                        <div class="point-frise pt-f1">🪨</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–70 до –50 милиона година</span>
+                            <p>Уздизање платоа Колорадо.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f1 droite">
+                        <div class="point-frise pt-f1">⛰️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">–6 до –5 милиона година</span>
+                            <p>Почетак дубљења кањона од стране реке Колорадо. Постепено формирање различитих зона
+                                (Запад и Исток независни, Мермерни кањон је новији).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE II -->
+                <div class="periode-frise bloc-periode-2">
+                    <div class="intro-periode intro-f2">
+                        <h3>Део « људско присуство пре Европе »</h3>
+                        <p>–4000 година → данас</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 gauche">
+                        <div class="point-frise pt-f2">🏹</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">≈ –4000 година</span>
+                            <p>Прва људска насеља.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 droite">
+                        <div class="point-frise pt-f2">🏕️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Анасази (Преци Пуебло)</span>
+                            <p>Пољопривреда и станишта прилагођена кањону.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 gauche">
+                        <div class="point-frise pt-f2">🏹</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Данашња племена</span>
+                            <p>Хавасупаи, Хуалапаи, Хопи, Навахо, Јужни Пајуте, Зуни.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f2 droite">
+                        <div class="point-frise pt-f2">🏕️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Данас</span>
+                            <p>Хавасупаи живе у кањону Хавасу, развој културног туризма.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE III -->
+                <div class="periode-frise bloc-periode-3">
+                    <div class="intro-periode intro-f3">
+                        <h3>Део « западни поглед »</h3>
+                        <p>1540 → 1890</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f3 gauche">
+                        <div class="point-frise pt-f3">🧭</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1540</span>
+                            <p>Откриће од стране Гарсије Лопеза де Карденаса.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f3 droite">
+                        <div class="point-frise pt-f3">🚣</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1869</span>
+                            <p>Џон Весли Пауел истражује реку Колорадо.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f3 gauche">
+                        <div class="point-frise pt-f3">🧭</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Крај 19. века</span>
+                            <p>Прве научне студије и мапе.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE IV -->
+                <div class="periode-frise bloc-periode-4">
+                    <div class="intro-periode intro-f4">
+                        <h3>Део « очување локалитета »</h3>
+                        <p>1893 → 1979</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 gauche">
+                        <div class="point-frise pt-f4">🌿</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1893</span>
+                            <p>Локалитет постаје Шумски резерват.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 droite">
+                        <div class="point-frise pt-f4">🏞️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1908</span>
+                            <p>Проглашење Националног споменика.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 gauche">
+                        <div class="point-frise pt-f4">🌿</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1919</span>
+                            <p>Званично оснивање Националног парка Велики кањон.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 droite">
+                        <div class="point-frise pt-f4">🏞️</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1975</span>
+                            <p>Интеграција Мермерног кањона у национални парк.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f4 gauche">
+                        <div class="point-frise pt-f4">🌿</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">1979</span>
+                            <p>УНЕСКО-ва класификација светске баштине.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERIODE V -->
+                <div class="periode-frise bloc-periode-5">
+                    <div class="intro-periode intro-f5">
+                        <h3>Део « туризам и изазови »</h3>
+                        <p>1980 → данас</p>
+                    </div>
+
+                    <div class="carte-evenement ev-f5 gauche">
+                        <div class="point-frise pt-f5">🌍</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Деведесете</span>
+                            <p>Поновно увођење калифорнијског кондора у регион.</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f5 droite">
+                        <div class="point-frise pt-f5">👣</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">2007</span>
+                            <p>Изградња Скајвока, симбол модерног туризма (племе Хуалапаи).</p>
+                        </div>
+                    </div>
+
+                    <div class="carte-evenement ev-f5 gauche">
+                        <div class="point-frise pt-f5">🌍</div>
+                        <div class="contenu-evenement">
+                            <span class="date-evenement">Данас</span>
+                            <p>4,5 милиона посетилаца годишње. Еколошке претње: клима, суша, пожари и бране.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div style="height: 50vh; display: flex; align-items: center; justify-content: center;">
-            <p class="police-cicle" style="font-size: 1.5rem; text-align: center;">Садржај ера ускоро...</p>
-        </div>
-    </main>
+    
+</main>
 
     <footer class="police-cicle">
         <p>"Исклесан Колорадом, Велики кањон, дубине скоро 1500 м, најспектакуларнија је клисура на свету. Смештен у

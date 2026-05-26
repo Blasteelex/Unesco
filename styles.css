@@ -1537,4 +1537,129 @@ body.page-frise::-webkit-scrollbar, body.page-carte::-webkit-scrollbar {
     display: none;
 }
 
+/* --- RESPONSIVITE MOBILE POUR LA FRISE --- */
+@media screen and (max-width: 768px) {
+    .conteneur-global-frise {
+        padding: 20px;
+    }
 
+    .ligne-verticale {
+        left: 20px;
+        transform: none;
+    }
+
+    .carte-evenement {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+
+    .carte-evenement.gauche,
+    .carte-evenement.droite {
+        left: 0;
+        text-align: left;
+    }
+
+    .carte-evenement.gauche .point-frise,
+    .carte-evenement.droite .point-frise {
+        left: -5px;
+        right: auto;
+    }
+
+    .carte-evenement.gauche .contenu-evenement::before,
+    .carte-evenement.droite .contenu-evenement::before {
+        left: auto;
+        right: 100%;
+        border-color: transparent;
+        border-right-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+
+
+/* --- CORRECTION POUR LES MODALES --- */
+
+/* Empêche le scroll du body quand une modale est ouverte */
+body:has(.calque-modal.actif),
+body:has(input.bascule-modal:not(#fermer-tout):checked),
+body:has(input.bascule-modal-membre:checked) {
+    overflow: hidden !important;
+}
+
+@media screen and (max-width: 1023px) {
+    .calque-modal {
+        align-items: flex-start !important;
+        padding-top: 5vh;
+        overflow-y: auto;
+    }
+
+    .boite-modal {
+        margin: 0 auto !important;
+    }
+
+    .boite-image-modal {
+        min-height: auto !important;
+        margin: auto !important;
+    }
+}
+
+/* --- FIX POUR LES TIROIRS SUR MOBILE (NATURE / HISTOIRE) --- */
+body:has(.panneau-tiroir.actif) {
+    overflow: hidden !important;
+}
+
+@media screen and (max-width: 1023px) {
+    #tiroir-gauche,
+    #tiroir-droite,
+    #tiroir-bas {
+        height: 100dvh !important;
+        top: 0 !important;
+        bottom: auto !important;
+        border-radius: 0 !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        display: block !important;
+    }
+
+    .grille-peuples, .conteneur-europe, .grille-protection {
+        display: block !important;
+    }
+
+    .colonne-peuple, .carte-europe {
+        margin-bottom: 40px !important;
+        display: block !important;
+        height: auto !important;
+    }
+
+    .grille-protection img {
+        margin-bottom: 20px !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .carte-europe img, .colonne-peuple img {
+        max-height: none !important;
+        height: auto !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+    
+    .carte-europe h4 {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        margin: 0 auto 20px auto !important;
+        display: inline-block !important;
+    }
+}
+
+/* --- CLASSE UNIQUE POUR LES 6 IMAGES DU PARC --- */
+.img-6images {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border: 2px solid white;
+    object-fit: cover;
+    border-radius: 5px;
+}

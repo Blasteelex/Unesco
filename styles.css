@@ -128,7 +128,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: sans-serif;
-    background-image: url("https://cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/A7FLRK6XEBFTZKLAPXEGCD4WWU.webp");
+    background-image: url("https://cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/A7FLRK6XEBFTZKLAPXEGCD4WWU.jpg");
     background-color: var(--fond-superposition);
     background-blend-mode: normal;
     background-size: cover;
@@ -1783,6 +1783,7 @@ body:has(.panneau-tiroir.actif) {
         gap: 10px;
     }
 }
+
 
 
 
